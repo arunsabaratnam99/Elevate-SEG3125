@@ -1,0 +1,70 @@
+.header {
+  background-color: #1A2C38;
+  color: #EEAF0E;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  text-decoration: none;
+}
+
+.logo-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo a {
+  color: #EEAF0E; /* Set the color of the link inside the logo */
+  font-size: 40px;
+  font-weight: 550; /* Font weight 550 */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Make the logo a pointer */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.logo a:hover {
+  color: #c98a0e; /* Darken color on hover */
+}
+
+.auth-buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+.auth-buttons .btn {
+  width: 107px; /* Ensures both buttons are the same width */
+  height: 52px; /* Ensures both buttons are the same height */
+  font-size: 20px; /* Set text size to 20px */
+  border-radius: 10px; /* Increase border-radius to 10px */
+  font-weight: 550; /* Font weight 550 */
+  margin-left: 10px; /* Adjust spacing as needed */
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Make the button a pointer */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.login-button {
+  background-color: #214055;
+  color: #fff;
+  border: none;
+}
+
+.login-button:hover {
+  background-color: #1a3147; /* Darken color on hover */
+}
+
+.register-button {
+  background-color: #EEAF0E;
+  color: #fff;
+  border: none;
+}
+
+.register-button:hover {
+  background-color: #d4980e; /* Darken color on hover */
+}

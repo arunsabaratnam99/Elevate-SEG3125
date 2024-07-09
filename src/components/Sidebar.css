@@ -1,0 +1,106 @@
+/* Sidebar.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;550&display=swap');
+
+.sidebar {
+  background-color: #1A2C38;
+  color: #f5f6fa;
+  min-height: 100vh;
+  height: 90%;
+  padding: 0 10px; 
+  font-family: 'Fredoka', sans-serif;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0 10px 0 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 550;
+  color: #CECECE;
+  background-color: transparent; /* Ensure no background color */
+  text-decoration: none;
+
+}
+
+.grouped-items {
+  background-color: #214055;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 147px; /* Set width for grouped items */
+}
+
+.nav-category-header {
+  background-color: #2F5C7A;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 550;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  width: 147px; /* Set width for header */
+  cursor: pointer; /* Make header clickable */
+}
+
+.sub-nav {
+  list-style-type: none;
+  padding-left: 10px; /* Adjusted padding to remove extra space */
+  margin-top: 0;
+  background-color: #214055;
+  padding: 10px 10px 0 10px;
+  border-radius: 0 0 5px 5px;
+  width: 147px; /* Set width for sub-nav */
+  min-height: 0; /* Initial height for hidden state */
+  overflow: hidden;
+  transition: height 0.3s ease; /* Smooth transition */
+}
+
+.grouped-items{
+  cursor: pointer;
+}
+
+.sub-nav.expanded {
+  height: auto; /* Expand to fit content */
+}
+
+.sub-nav li {
+  margin-bottom: 17px; /* Increased spacing between text items */
+  cursor: pointer;
+  background-color: transparent; /* Ensure no background color */
+}
+
+.nav-item a {
+  color: #CECECE;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.nav-item a:hover {
+  color: #c4dff6; /* same hover effect as the other items */
+  transition: color 0.3s;
+}
+
+.nav-item li:hover,
+.sub-nav li:hover,
+.grouped-items .nav-item:hover {
+  color: #c4dff6;
+  transition: color 0.3s;
+}
+
+.sub-nav li:last-child {
+  margin-bottom: 5px;
+}
+
+.grouped-items .nav-item {
+  margin-bottom: 17px;
+}
+
+.grouped-items .nav-item:last-child {
+  margin-bottom: 0;
+}

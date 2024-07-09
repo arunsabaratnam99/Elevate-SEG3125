@@ -1,0 +1,133 @@
+@import './SharedStyles.css';
+
+.my-bets-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Center align the content */
+  padding-left: 200px; /* Add padding to the left */
+
+}
+
+.my-bets-page h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  color: #ffffff;
+  font-size: 39px;
+  margin-bottom: 20px;
+}
+
+.bet-card {
+  background-color: #213743;
+  border-radius: 10px;
+  color: #ffffff;
+  width: 100%;
+  max-width: 350px; /* Adjust as needed */
+  overflow: hidden; /* Ensure the child elements don't overflow */
+
+}
+
+.bet-card-header {
+  background-color: #2b4a5f; /* Different color for the header */
+  padding: 10px;
+  text-align: left; /* Left-align the header */
+}
+
+.bet-date-time {
+  font-size: 18px;
+  font-weight: 550;
+  text-align: left; /* Left-align the date and time */
+}
+
+.bet-details {
+  padding: 20px; /* Add padding to the details */
+  text-align: left; /* Left-align the bet details */
+}
+
+.teams {
+  font-size: 18px;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+
+.winner-betdetails {
+  font-size: 16px;
+  color: #c4dff6;
+  margin-bottom: 5px;
+}
+
+.team-winner {
+  font-size: 18px;
+  font-weight: 550;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.odds {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.bet-time {
+  font-size: 14px;
+  color: #c4dff6;
+  margin-top: 5px;
+}
+
+.hr-line {
+  border: none;
+  border-top: 2px solid #2D4352;
+  margin: 20px 0; /* Adjust the spacing as needed */
+}
+
+.bet-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left */
+  margin-top: 10px;
+  padding: 0 20px 20px; /* Add padding to the sides and bottom */
+  font-size: 16px;
+}
+
+.wager-info, .return-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure full width */
+  margin-bottom: 10px; /* Add spacing between wager and return */
+}
+
+.wager, .return {
+  font-weight: 550;
+}
+
+.wager-amount, .return-amount {
+  font-size: 18px;
+  color: #ffffff;
+  margin-left: 10px; /* Adjust the spacing as needed */
+}
+
+
+.cashout-button {
+  background-color: #2F4553; /* Change color to #2F4553 */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 11px;
+  margin: 0px 0 20px 0; /* Add top and bottom margin */
+  cursor: pointer;
+  width: calc(100% - 40px); /* Full width with consideration for padding */
+  text-align: center;
+  font-family: 'Fredoka', sans-serif; /* Change font to Fredoka */
+  box-sizing: border-box; /* Ensure padding and width calculation */
+  font-weight: 550;
+  margin-left: 20px;
+  transition: background-color 0.3s ease; /* Add transition for background color */
+
+}
+
+.cashout-button:hover {
+  background-color: #1F2F3A; /* Darker color on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+

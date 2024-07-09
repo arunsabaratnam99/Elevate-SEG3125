@@ -1,0 +1,23 @@
+@import './fonts.css';
+
+.App {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.main-layout {
+  display: flex;
+}
+
+.sidebar {
+  z-index: 2;
+}
+
+.header {
+  z-index: 2;
+}
+
+.content-container {
+  flex-grow: 1;
+  z-index: 1;
+  background-color: #1A2C38;
+}

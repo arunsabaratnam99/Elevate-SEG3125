@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e530ccc6.css",
+    "main.js": "/static/js/main.52c6a1b0.js",
+    "static/js/453.4d4e1e8e.chunk.js": "/static/js/453.4d4e1e8e.chunk.js",
+    "static/media/gamblingthing.svg.svg": "/static/media/gamblingthing.svg.7819b500708d952e86e5ab45510ba5f5.svg",
+    "static/media/simple-icons_samsungpay.svg": "/static/media/simple-icons_samsungpay.5a2ee298e7a11da73a8f200283f406b6.svg",
+    "static/media/devicon_google.svg": "/static/media/devicon_google.72858e507374cb29d77b17d8031997aa.svg",
+    "static/media/logos_google-pay.svg": "/static/media/logos_google-pay.0c57e4ddf3f2cddfbc126d613cadb86d.svg",
+    "static/media/logos_apple-pay.svg": "/static/media/logos_apple-pay.b08afb8dc2a304414f0710dba7e80222.svg",
+    "static/media/logos_visa.svg": "/static/media/logos_visa.18ad71ff0856b6d855ace48673793314.svg",
+    "static/media/logos_facebook.svg": "/static/media/logos_facebook.737620404f5fb853ca2b5e8b0c85c0ff.svg",
+    "static/media/logos_mastercard.svg": "/static/media/logos_mastercard.2e6264151ed49a0adca25c47c0c2a293.svg",
+    "index.html": "/index.html",
+    "static/media/logos_twitch.svg": "/static/media/logos_twitch.33f093c7c1c558baf9a6adcbfbaa1a47.svg",
+    "main.e530ccc6.css.map": "/static/css/main.e530ccc6.css.map",
+    "main.52c6a1b0.js.map": "/static/js/main.52c6a1b0.js.map",
+    "453.4d4e1e8e.chunk.js.map": "/static/js/453.4d4e1e8e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e530ccc6.css",
+    "static/js/main.52c6a1b0.js"
+  ]
+}

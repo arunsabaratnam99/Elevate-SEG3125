@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;550&display=swap');
+
+html, body {
+  background-color: #1A2C38;
+  height: 100%;
+  width: 100%;
+  font-family: 'Fredoka', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.main-content {
+  background-color: #0F212E;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px 0 0 0;
+}

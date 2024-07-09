@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;550&display=swap');
+
+html, body {
+  background-color: #1A2C38;
+  height: 100%;
+  width: 100%;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.main-content {
+  background-color: #0F212E;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px 0 0 0;
+}
+
+.section, .payment-section, .bottom-sections {
+  display: flex;
+  background-color: #1A2C38;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto; /* Center the section */
+  width: 75%; /* Adjust width as needed */
+  max-width: 1000px; /* Set a max width */
+  padding: 20px;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-weight: 550;
+}
+
+.text-container h2 {
+  color: white;
+  margin: 0;
+  font-weight: 550;
+  font-size: 39px;
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+}
+
+.text-container p {
+  color: #CECECE;
+  margin: 10px 0;
+  font-weight: 550;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.section-register-button {
+  background-color: #EEAF0E;
+  color: white;
+  border: none;
+  padding: 20px 250px; /* Increase padding for a wider button */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 26px; /* Adjust font size for the button */
+  font-weight: 550;
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the button */
+}
+
+.continue-with {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.continue-with p {
+  color: white;
+  margin: 10px 20px;
+  font-weight: 550;
+  font-size: 15px; /* 5 less than join now text size */
+  background-color: #1A2C38; /* Match background color */
+  padding: 0 10px; /* Add padding to avoid overlap with lines */
+}
+
+.continue-with hr {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background-color: #666666;
+  margin: 0 10px; /* Space between the line and text */
+}
+
+.social-buttons {
+  display: flex;
+  gap: 20px; /* Increase spacing between buttons on the x-axis */
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  background-color: #214055;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 550;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.social-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between rows */
+}
+
+.payment-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.payment-logo {
+  width: 50px;
+  height: auto;
+}
+
+.deposit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deposit-container h2 {
+  color: white;
+  margin: 0;
+  font-weight: 550;
+  font-size: 29px;
+  text-align: center;
+}
+
+.deposit-container p {
+  color: #FFD700;
+  margin: 10px 0;
+  font-weight: 550;
+  font-size: 25px;
+  text-align: center;
+}
+
+.deposit-button {
+  background-color: #6A0DAD;
+  color: white;
+  border: none;
+  padding: 15px 60px; /* Increase padding for a wider button */
+  border-radius: 10px;
+  font-size: 26px; /* Adjust font size for the button */
+  font-weight: 550;
+}
+
+.bottom-sections.no-background {
+  background-color: transparent !important; /* Set to transparent or remove the background color */
+}
+
+.casino-container, .sportsbook-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #214055; /* Keep the background color */
+  border-radius: 10px;
+  padding: 90px;
+  width: 48%; /* Adjust width to ensure space between boxes */
+  margin: 0 1%; /* Add margin to create space between containers */
+  text-align: center;
+}
+
+.casino-container h2, .sportsbook-container h2 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+.casino-container p, .sportsbook-container p {
+  color: white;
+  font-size: 18px;
+  margin: 10px 0 0 0;
+}
