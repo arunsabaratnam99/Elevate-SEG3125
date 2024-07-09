@@ -25,13 +25,12 @@ html, body {
   border-radius: 10px;
   overflow: hidden;
   margin: 20px auto; /* Center the section */
-  width: 75%; /* Adjust width as needed */
-  max-width: 1000px; /* Set a max width */
-  padding: 20px;
+  width: 90%; /* Adjust width as needed */
+  max-width: 1600px; /* Set a max width */
 }
 
 .image-container {
-  flex: 1;
+  flex: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +40,11 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px 0 0 10px; /* Add border-radius for top-left and bottom-left corners */
 }
 
 .text-container {
-  flex: 1;
+  flex: 1; /* Adjust flex to give equal space to the image and text */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,12 +74,18 @@ html, body {
   background-color: #EEAF0E;
   color: white;
   border: none;
-  padding: 20px 250px; /* Increase padding for a wider button */
+  padding: 20px 80px; /* Adjust padding for a better look */
   border-radius: 5px;
   margin-bottom: 20px;
   font-size: 26px; /* Adjust font size for the button */
+  width: 100%;
   font-weight: 550;
   font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the button */
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.section-register-button:hover {
+  background-color: #D18F0A; /* Darker color on hover */
 }
 
 .continue-with {
@@ -108,7 +114,7 @@ html, body {
 
 .social-buttons {
   display: flex;
-  gap: 20px; /* Increase spacing between buttons on the x-axis */
+  gap: 35px; /* Increase spacing between buttons on the x-axis */
 }
 
 .social-button {
@@ -121,6 +127,11 @@ html, body {
   border-radius: 10px;
   font-weight: 550;
   font-family: 'Fredoka', sans-serif;
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.social-button:hover {
+  background-color: #1A3348; /* Darker color on hover */
 }
 
 .social-logo {
@@ -129,53 +140,94 @@ html, body {
   margin-right: 10px; /* Space between logo and text */
 }
 
+.payment-section {
+  display: flex;
+  flex-direction: row; /* Change to row to position image and text side by side */
+  background-color: #1A2C38;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto; /* Center the section */
+  width: 90%; /* Adjust width as needed */
+  max-width: 1600px; /* Set a max width */
+  min-height: 300px; /* Ensure the section is tall enough */
+}
+
+.payment-image-container {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .payment-options {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Space between rows */
+  gap: 30px; /* Increase space between rows */
 }
 
 .payment-row {
   display: flex;
-  gap: 20px;
+  gap: 50px; /* Increase space between icons in the row */
   justify-content: center;
 }
 
+.payment-row:first-child {
+  margin-top: 20px;
+}
+
 .payment-logo {
-  width: 50px;
+  width: 115px; /* Increase width of the logos */
   height: auto;
 }
 
-.deposit-container {
+.payment-text-container {
+  flex: 1; /* Adjust flex to give equal space to the image and text */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start; /* Align items to the start (left) */
+  align-items: flex-start; /* Align items to the start (left) */
+  padding: 20px;
+  padding-left: 40px; /* Add left padding */
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-weight: 550;
+  background-color: #1C313F;
 }
 
-.deposit-container h2 {
+.payment-text-container h2 {
   color: white;
   margin: 0;
   font-weight: 550;
-  font-size: 29px;
-  text-align: center;
+  font-size: 40px; /* Increase font size */
+  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  padding-top: 5px;
 }
 
-.deposit-container p {
-  color: #FFD700;
+.payment-text-container p {
+  color: white;
   margin: 10px 0;
   font-weight: 550;
-  font-size: 25px;
-  text-align: center;
+  font-size: 30px; /* Increase font size */
 }
 
-.deposit-button {
-  background-color: #6A0DAD;
+.payment-text-container .highlight {
+  color: #FFD700;
+}
+
+.payment-deposit-button {
+  background-color: #834DF7;
   color: white;
   border: none;
-  padding: 15px 60px; /* Increase padding for a wider button */
+  padding: 20px 80px; /* Increase padding for a wider button */
   border-radius: 10px;
-  font-size: 26px; /* Adjust font size for the button */
+  font-size: 28px; /* Adjust font size for the button */
   font-weight: 550;
+  margin-top: 50px; /* Move the button lower */
+  font-family: 'Fredoka', sans-serif;
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.payment-deposit-button:hover {
+  background-color: #5B37A7; /* Darker color on hover */
 }
 
 .bottom-sections.no-background {
@@ -189,7 +241,7 @@ html, body {
   align-items: center;
   background-color: #214055; /* Keep the background color */
   border-radius: 10px;
-  padding: 90px;
+  padding: 40px; /* Adjust padding as needed */
   width: 48%; /* Adjust width to ensure space between boxes */
   margin: 0 1%; /* Add margin to create space between containers */
   text-align: center;

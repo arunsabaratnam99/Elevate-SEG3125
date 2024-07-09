@@ -25,7 +25,6 @@
   color: #CECECE;
   background-color: transparent; /* Ensure no background color */
   text-decoration: none;
-
 }
 
 .grouped-items {
@@ -52,7 +51,7 @@
   padding-left: 10px; /* Adjusted padding to remove extra space */
   margin-top: 0;
   background-color: #214055;
-  padding: 10px 10px 0 10px;
+  padding: 10px 10px 0 ;
   border-radius: 0 0 5px 5px;
   width: 147px; /* Set width for sub-nav */
   min-height: 0; /* Initial height for hidden state */
@@ -103,4 +102,42 @@
 
 .grouped-items .nav-item:last-child {
   margin-bottom: 0;
+}
+
+.language-dropdown {
+  list-style: none;
+  padding: 0;
+  background-color: #2F5C7A;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.language-dropdown li {
+  cursor: pointer;
+  color: #CECECE;
+}
+
+.language-dropdown li:hover {
+  background-color: #214055;
+  color: #FFFFFF;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #CECECE;
+  width: calc(100% - 10px); /* Adjust width to ensure full length */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+.language-item.selected {
+  background-color: #214055; /* Changed to match the color scheme */
+  color: #FFFFFF;
+}
+
+.language-item .checkmark {
+  margin-left: auto;
+  padding-left: 10px; /* Add some padding to separate the checkmark from the text */
 }

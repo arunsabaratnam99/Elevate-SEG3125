@@ -40,21 +40,23 @@ const Homepage = () => {
         </div>
       </div>
       <div className="section payment-section">
-        <div className="payment-options">
-          <div className="payment-row">
-            <img src={applePayLogo} alt="Apple Pay" className="payment-logo" />
-            <img src={visaLogo} alt="Visa" className="payment-logo" />
-            <img src={googlePayLogo} alt="Google Pay" className="payment-logo" />
-          </div>
-          <div className="payment-row">
-            <img src={mastercardLogo} alt="MasterCard" className="payment-logo" />
-            <img src={samsungPayLogo} alt="Samsung Pay" className="payment-logo" />
+        <div className="payment-image-container">
+          <div className="payment-options">
+            <div className="payment-row">
+              <img src={applePayLogo} alt="Apple Pay" className="payment-logo" />
+              <img src={visaLogo} alt="Visa" className="payment-logo" />
+              <img src={googlePayLogo} alt="Google Pay" className="payment-logo" />
+            </div>
+            <div className="payment-row">
+              <img src={mastercardLogo} alt="MasterCard" className="payment-logo" />
+              <img src={samsungPayLogo} alt="Samsung Pay" className="payment-logo" />
+            </div>
           </div>
         </div>
-        <div className="deposit-container">
+        <div className="payment-text-container">
           <h2>Get Started Now</h2>
-          <p>100% Deposit Bonus</p>
-          <button className="deposit-button">Deposit</button>
+          <p><span className="highlight">100%</span> Deposit Bonus</p>
+          <button className="payment-deposit-button">Deposit</button>
         </div>
       </div>
       <div className="bottom-sections no-background">
