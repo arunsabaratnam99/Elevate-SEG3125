@@ -21,12 +21,11 @@
   width: 80%;
   max-width: 500px; /* Reduced width */
   box-sizing: border-box;
+  position: relative;
 }
 
 .registration-popup-header {
-  display: flex;
-  justify-content: space-between; /* Adjust to space-between */
-  align-items: center;
+  position: relative;
   padding-bottom: 10px;
 }
 
@@ -36,6 +35,7 @@
   font-size: 24px; /* Adjust font size as needed */
   color: white;
   margin-top: 20px; /* Remove default margin */
+  text-align: center; /* Center the text */
 }
 
 .registration-close-btn {
@@ -45,6 +45,9 @@
   font-weight: bold; /* Make the close button thicker */
   cursor: pointer;
   color: #B1BAD3; /* Set the close button color */
+  position: absolute;
+  top: 1px;
+  right: 10px;
 }
 
 .registration-step h3 {
@@ -157,7 +160,7 @@
   height: 20px; /* Set consistent size */
   position: absolute;
   right: 10px;
-  top: 40%;
+  top: 42%;
   transform: translateY(-50%); /* Center icon vertically */
   cursor: pointer;
 }
