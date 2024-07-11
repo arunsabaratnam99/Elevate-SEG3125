@@ -7,6 +7,7 @@
   height: 90%;
   padding: 0 10px; 
   font-family: 'Fredoka', sans-serif;
+  position: relative;
 }
 
 .nav {
@@ -24,6 +25,7 @@
   color: #CECECE;
   background-color: transparent; /* Ensure no background color */
   text-decoration: none;
+  display: block; /* Ensure items stack vertically */
 }
 
 .grouped-items {
@@ -32,6 +34,20 @@
   border-radius: 5px;
   margin-bottom: 10px;
   width: 147px; /* Set width for grouped items */
+}
+
+.grouped-items .nav-item {
+  margin-bottom: 17px;
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+.grouped-items .nav-item:last-child {
+  margin-bottom: 0;
+}
+
+.grouped-items:hover {
+  cursor: pointer;
 }
 
 .nav-category-header {
@@ -60,10 +76,6 @@
   transition: height 0.3s ease; /* Smooth transition */
 }
 
-.grouped-items {
-  cursor: pointer;
-}
-
 .sub-nav.expanded {
   height: auto; /* Expand to fit content */
 }
@@ -81,6 +93,8 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 550;
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Align items vertically */
 }
 
 .nav-item a:hover {
@@ -97,14 +111,6 @@
 
 .sub-nav li:last-child {
   margin-bottom: 5px;
-}
-
-.grouped-items .nav-item {
-  margin-bottom: 17px;
-}
-
-.grouped-items .nav-item:last-child {
-  margin-bottom: 0;
 }
 
 .language-dropdown {

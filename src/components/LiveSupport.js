@@ -44,7 +44,6 @@ const LiveSupport = () => {
           </li>
         </ul>
       </div>
-      {isPopupVisible && <Popup content={<div>Your content here</div>} handleClose={handleClosePopup} />}
       <div className="footer">
         <button>
           <img src={homeIcon} alt="Home Icon" />

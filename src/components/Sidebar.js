@@ -228,17 +228,18 @@ function Sidebar() {
             </ul>
           </li>
           <div className="grouped-items">
-            <li className="nav-item"><img src={LiveInGameVector} alt="Live In Game Icon" className="nav-icon" />{t.liveInGame}</li>
-            <li className="nav-item"><img src={MyBetsVector} alt="My Bets Icon" className="nav-icon" /><Link to="/my-bets">{t.myBets}</Link></li>
+            <li className="nav-item"><img src={LiveInGameVector} alt="Live In Game Icon" className="sub-nav-icon" />{t.liveInGame}</li>
+            <li className="nav-item"><img src={MyBetsVector} alt="My Bets Icon" className="sub-nav-icon" /><Link to="/my-bets">{t.myBets}</Link></li>
+          </div>
+          
+          <div className="grouped-items">
+            <li className="nav-item"><img src={ChatVector} alt="Chat Icon" className="sub-nav-icon" /><Link to="/chat">{t.chat}</Link></li>
+            <li className="nav-item" onClick={togglePopup}><img src={LiveVector} alt="Live Support Icon" className="sub-nav-icon" />{t.liveSupport}</li>
           </div>
           <div className="grouped-items">
-            <li className="nav-item"><img src={ChatVector} alt="Chat Icon" className="nav-icon" /><Link to="/chat">{t.chat}</Link></li>
-            <li className="nav-item" onClick={togglePopup}><img src={LiveVector} alt="Live Support Icon" className="nav-icon" />{t.liveSupport}</li>
-          </div>
-          <div className="grouped-items">
-            <li className="nav-item"><img src={PromotionVector} alt="Promotions Icon" className="nav-icon" />{t.promotions}</li>
-            <li className="nav-item"><img src={ReferVector} alt="Refer Icon" className="nav-icon" />{t.refer}</li>
-            <li className="nav-item"><img src={RedeemVector} alt="Redeem Icon" className="nav-icon" />{t.redeem}</li>
+            <li className="nav-item"><img src={PromotionVector} alt="Promotions Icon" className="sub-nav-icon" />{t.promotions}</li>
+            <li className="nav-item"><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
+            <li className="nav-item"><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
           </div>
           <li className="nav-item">
             <div
@@ -274,7 +275,7 @@ function Sidebar() {
             </ul>
           </li>
           <div className="grouped-items">
-            <li className="nav-item"><img src={SearchVector} alt="Search Icon" className="nav-icon" />{t.search}</li>
+            <li className="nav-item"><img src={SearchVector} alt="Search Icon" className="sub-nav-icon" />{t.search}</li>
           </div>
         </ul>
       </nav>

@@ -17,7 +17,7 @@
   color: #ffffff;
   font-size: 39px;
   align-self: flex-start;
-  padding-left: 200px;
+  padding-left: 85px;
 }
 
 .messages {
@@ -81,7 +81,7 @@
   justify-content: center;
   padding: 10px 20px;
   box-sizing: border-box;
-  background-color: #0F212E; /* Add a background color to match the page */
+  background-color: transparent; /* Add a background color to match the page */
 }
 
 .message-form {

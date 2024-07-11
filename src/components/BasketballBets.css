@@ -11,34 +11,15 @@
   color: #ffffff;
   font-size: 39px;
   margin-bottom: 20px;
-  padding-left: 200px;
+  padding-left: 85px;
 }
 
 .bets-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
-  max-width: 1300px;
-  padding-left: 200px;
-}
-
-@media (max-width: 2000px) {
-  .bets-list {
-    max-width: 1000px;
-  }
-}
-
-@media (max-width: 1500px) {
-  .bets-list {
-    max-width: 900px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .bets-list {
-    max-width: 100%;
-  }
+  width: calc(100% - 85px); /* Adjust width to account for padding */
+  padding-left: 85px;
 }
 
 .bet-item {
@@ -49,6 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: calc(100% - 123px); /* Adjust width to account for padding */
 }
 
 .bet-date {
@@ -118,7 +100,7 @@
 
 .odds-box {
   background-color: #13232E;
-  width: 265px; /* Set a fixed width for the box */
+  width: 450px; /* Set a fixed width for the box */
   padding: 10px; /* Set padding to only top and bottom to avoid vertical growth */
   border-radius: 5px;
   display: flex;

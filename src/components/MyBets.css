@@ -16,7 +16,7 @@
   color: #ffffff;
   font-size: 39px;
   margin-bottom: 20px;
-  padding-left: 200px; /* Add padding to the left */
+  padding-left: 85px; /* Add padding to the left */
 }
 
 .bets-grid {
@@ -25,7 +25,7 @@
   gap: 20px;
   justify-content: flex-start;
   width: calc(100% - 200px); /* 200px padding on both sides */
-  padding-left: 200px; /* Add padding to the left */
+  padding-left: 85px; /* Add padding to the left */
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 

@@ -8,9 +8,6 @@
   display: flex;
 }
 
-.sidebar {
-  z-index: 2;
-}
 
 .header {
   z-index: 2;
