@@ -118,7 +118,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
-  border: 1px solid #253946; /* Set border color */
+  border: 2px solid #253946; /* Set border color */
   background-color: #142633; /* Set background color */
   color: #6D7880; /* Set default text color */
   font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to input text */
