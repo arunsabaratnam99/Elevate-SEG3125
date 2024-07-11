@@ -1,11 +1,13 @@
-@import './SharedStyles.css';
+.main-content {
+  padding: 20px;
+  color: #ffffff;
+}
 
 .my-bets-page {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Center align the content */
-  padding-left: 200px; /* Add padding to the left */
-
+  align-items: flex-start;
+  width: 100%; /* Ensure the page takes full width */
 }
 
 .my-bets-page h1 {
@@ -14,33 +16,58 @@
   color: #ffffff;
   font-size: 39px;
   margin-bottom: 20px;
+  padding-left: 200px; /* Add padding to the left */
+}
+
+.bets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  width: calc(100% - 200px); /* 200px padding on both sides */
+  padding-left: 200px; /* Add padding to the left */
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 
 .bet-card {
   background-color: #213743;
   border-radius: 10px;
   color: #ffffff;
-  width: 100%;
-  max-width: 350px; /* Adjust as needed */
-  overflow: hidden; /* Ensure the child elements don't overflow */
+  width: max-content; /* Allow the card to adjust to the content width */
+  min-width: 280px; /* Minimum width to ensure the card is not too narrow */
+  max-width: 100%; /* Ensure the card doesn't exceed the container width */
+  overflow: hidden;
+  flex-grow: 1;
+  box-sizing: border-box; /* Ensure padding and width calculation */
+}
 
+@media (max-width: 1600px) {
+  .bet-card {
+    max-width: calc(50% - 20px); /* 2 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .bet-card {
+    max-width: 100%; /* 1 column */
+  }
 }
 
 .bet-card-header {
-  background-color: #2b4a5f; /* Different color for the header */
+  background-color: #2b4a5f;
   padding: 10px;
-  text-align: left; /* Left-align the header */
+  text-align: left;
 }
 
 .bet-date-time {
   font-size: 18px;
   font-weight: 550;
-  text-align: left; /* Left-align the date and time */
+  text-align: left;
 }
 
 .bet-details {
-  padding: 20px; /* Add padding to the details */
-  text-align: left; /* Left-align the bet details */
+  padding: 20px;
+  text-align: left;
 }
 
 .teams {
@@ -77,15 +104,15 @@
 .hr-line {
   border: none;
   border-top: 2px solid #2D4352;
-  margin: 20px 0; /* Adjust the spacing as needed */
+  margin: 20px 0;
 }
 
 .bet-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align to the left */
+  align-items: flex-start;
   margin-top: 10px;
-  padding: 0 20px 20px; /* Add padding to the sides and bottom */
+  padding: 0 20px 20px;
   font-size: 16px;
 }
 
@@ -93,8 +120,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure full width */
-  margin-bottom: 10px; /* Add spacing between wager and return */
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .wager, .return {
@@ -102,32 +129,31 @@
 }
 
 .wager-amount, .return-amount {
-  font-size: 18px;
+  font-size: 15px;
   color: #ffffff;
-  margin-left: 10px; /* Adjust the spacing as needed */
+  margin-left: 10px;
 }
 
-
 .cashout-button {
-  background-color: #2F4553; /* Change color to #2F4553 */
+  background-color: #2F4553;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 11px;
-  margin: 0px 0 20px 0; /* Add top and bottom margin */
+  margin: 0px 0 20px 0;
   cursor: pointer;
-  width: calc(100% - 40px); /* Full width with consideration for padding */
+  width: calc(100% - 40px);
   text-align: center;
-  font-family: 'Fredoka', sans-serif; /* Change font to Fredoka */
-  box-sizing: border-box; /* Ensure padding and width calculation */
+  font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
   font-weight: 550;
   margin-left: 20px;
-  transition: background-color 0.3s ease; /* Add transition for background color */
-
+  transition: background-color 0.3s ease;
 }
 
 .cashout-button:hover {
-  background-color: #1F2F3A; /* Darker color on hover */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #1F2F3A;
+  cursor: pointer;
 }
+
 

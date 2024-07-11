@@ -4,6 +4,37 @@ import './Sidebar.css';
 import Popup from './Popup';
 import LiveSupport from './LiveSupport';
 
+// Import icons
+import BaccaratVector from './icons/BaccaratVector.svg';
+import BaseballVector from './icons/BaseballVector.svg';
+import BasketballVector from './icons/BasketballVector.svg';
+import BlackjackVector from './icons/BlackjackVector.svg';
+import CasinoVector from './icons/CasinoVector.svg';
+import ChatVector from './icons/ChatVector.svg';
+import Craps from './icons/Craps.svg';
+import CricketVector from './icons/CricketVector.svg';
+import CS2Vector from './icons/CS2Vector.svg';
+import FootballVector from './icons/FootballVector.svg';
+import HockeyVector from './icons/HockeyVector.svg';
+import LanguageVector from './icons/LanguageVector.svg';
+import LiveInGameVector from './icons/LiveInGameVector.svg';
+import LiveVector from './icons/LiveVector.svg';
+import LoLVector from './icons/LoLVector.svg';
+import MyBetsVector from './icons/MyBetsVector.svg';
+import PokerVector from './icons/PokerVector.svg';
+import PromotionVector from './icons/PromotionVector.svg';
+import RedeemVector from './icons/RedeemVector.svg';
+import ReferVector from './icons/ReferVector.svg';
+import RouletteVector from './icons/RouletteVector.svg';
+import SearchVector from './icons/SearchVector.svg';
+import SlotsVector from './icons/SlotsVector.svg';
+import SoccerVector from './icons/SoccerVector.svg';
+import SportsVector from './icons/SportsVector.svg';
+import TableTennisVector from './icons/TableTennisVector.svg';
+import TennisVector from './icons/TennisVector.svg';
+import ValorantVector from './icons/ValorantVector.svg';
+import VolleyballVector from './icons/VolleyballVector.svg';
+
 const translations = {
   en: {
     casino: "Casino",
@@ -17,8 +48,28 @@ const translations = {
     redeem: "Redeem",
     language: "English",
     search: "Search",
-    games: ["Blackjack", "Baccarat", "Slots", "Roulette", "Poker", "Craps"],
-    sportsList: ["Basketball", "Soccer", "Hockey", "Football", "Tennis", "Baseball", "Cricket", "Volleyball", "Table Tennis", "Valorant", "LoL", "CS2"],
+    games: [
+      { name: "Blackjack", icon: BlackjackVector },
+      { name: "Baccarat", icon: BaccaratVector },
+      { name: "Slots", icon: SlotsVector },
+      { name: "Roulette", icon: RouletteVector },
+      { name: "Poker", icon: PokerVector },
+      { name: "Craps", icon: Craps }
+    ],
+    sportsList: [
+      { name: "Basketball", icon: BasketballVector },
+      { name: "Soccer", icon: SoccerVector },
+      { name: "Hockey", icon: HockeyVector },
+      { name: "Football", icon: FootballVector },
+      { name: "Tennis", icon: TennisVector },
+      { name: "Baseball", icon: BaseballVector },
+      { name: "Cricket", icon: CricketVector },
+      { name: "Volleyball", icon: VolleyballVector },
+      { name: "Table Tennis", icon: TableTennisVector },
+      { name: "Valorant", icon: ValorantVector },
+      { name: "LoL", icon: LoLVector },
+      { name: "CS2", icon: CS2Vector }
+    ],
   },
   fr: {
     casino: "Casino",
@@ -32,8 +83,28 @@ const translations = {
     redeem: "Échanger",
     language: "Français",
     search: "Rechercher",
-    games: ["Blackjack", "Baccarat", "Machines à sous", "Roulette", "Poker", "Craps"],
-    sportsList: ["Basketball", "Football", "Hockey", "Football américain", "Tennis", "Baseball", "Cricket", "Volley-ball", "Tennis de table", "Valorant", "LoL", "CS2"],
+    games: [
+      { name: "Blackjack", icon: BlackjackVector },
+      { name: "Baccarat", icon: BaccaratVector },
+      { name: "Machines à sous", icon: SlotsVector },
+      { name: "Roulette", icon: RouletteVector },
+      { name: "Poker", icon: PokerVector },
+      { name: "Craps", icon: Craps }
+    ],
+    sportsList: [
+      { name: "Basketball", icon: BasketballVector },
+      { name: "Football", icon: FootballVector },
+      { name: "Hockey", icon: HockeyVector },
+      { name: "Football américain", icon: FootballVector },
+      { name: "Tennis", icon: TennisVector },
+      { name: "Baseball", icon: BaseballVector },
+      { name: "Cricket", icon: CricketVector },
+      { name: "Volley-ball", icon: VolleyballVector },
+      { name: "Tennis de table", icon: TableTennisVector },
+      { name: "Valorant", icon: ValorantVector },
+      { name: "LoL", icon: LoLVector },
+      { name: "CS2", icon: CS2Vector }
+    ],
   },
   es: {
     casino: "Casino",
@@ -47,8 +118,28 @@ const translations = {
     redeem: "Canjear",
     language: "Español",
     search: "Buscar",
-    games: ["Blackjack", "Baccarat", "Tragamonedas", "Ruleta", "Póker", "Craps"],
-    sportsList: ["Baloncesto", "Fútbol", "Hockey", "Fútbol americano", "Tenis", "Béisbol", "Críquet", "Voleibol", "Tenis de mesa", "Valorant", "LoL", "CS2"],
+    games: [
+      { name: "Blackjack", icon: BlackjackVector },
+      { name: "Baccarat", icon: BaccaratVector },
+      { name: "Tragamonedas", icon: SlotsVector },
+      { name: "Ruleta", icon: RouletteVector },
+      { name: "Póker", icon: PokerVector },
+      { name: "Craps", icon: Craps }
+    ],
+    sportsList: [
+      { name: "Baloncesto", icon: BasketballVector },
+      { name: "Fútbol", icon: SoccerVector },
+      { name: "Hockey", icon: HockeyVector },
+      { name: "Fútbol americano", icon: FootballVector },
+      { name: "Tenis", icon: TennisVector },
+      { name: "Béisbol", icon: BaseballVector },
+      { name: "Críquet", icon: CricketVector },
+      { name: "Voleibol", icon: VolleyballVector },
+      { name: "Tenis de mesa", icon: TableTennisVector },
+      { name: "Valorant", icon: ValorantVector },
+      { name: "LoL", icon: LoLVector },
+      { name: "CS2", icon: CS2Vector }
+    ],
   },
 };
 
@@ -99,6 +190,7 @@ function Sidebar() {
               className="nav-category-header"
               onClick={() => toggleCategory('casino')}
             >
+              <img src={CasinoVector} alt="Casino Icon" className="nav-icon" />
               {t.casino}
             </div>
             <ul
@@ -107,7 +199,10 @@ function Sidebar() {
               style={{ height: expandedCategory === 'casino' ? subNavHeights.casino : 0 }}
             >
               {t.games.map((game, index) => (
-                <li key={index}>{game}</li>
+                <li key={index}>
+                  <img src={game.icon} alt={`${game.name} Icon`} className="sub-nav-icon" />
+                  {game.name}
+                </li>
               ))}
             </ul>
           </li>
@@ -116,6 +211,7 @@ function Sidebar() {
               className="nav-category-header"
               onClick={() => toggleCategory('sports')}
             >
+              <img src={SportsVector} alt="Sports Icon" className="nav-icon" />
               {t.sports}
             </div>
             <ul
@@ -124,28 +220,32 @@ function Sidebar() {
               style={{ height: expandedCategory === 'sports' ? subNavHeights.sports : 0 }}
             >
               {t.sportsList.map((sport, index) => (
-                <li key={index}><Link to={`/${sport.toLowerCase()}`}>{sport}</Link></li>
+                <li key={index}>
+                  <img src={sport.icon} alt={`${sport.name} Icon`} className="sub-nav-icon" />
+                  <Link to={`/${sport.name.toLowerCase()}`}>{sport.name}</Link>
+                </li>
               ))}
             </ul>
           </li>
           <div className="grouped-items">
-            <li className="nav-item">{t.liveInGame}</li>
-            <li className="nav-item"><Link to="/my-bets">{t.myBets}</Link></li>
+            <li className="nav-item"><img src={LiveInGameVector} alt="Live In Game Icon" className="nav-icon" />{t.liveInGame}</li>
+            <li className="nav-item"><img src={MyBetsVector} alt="My Bets Icon" className="nav-icon" /><Link to="/my-bets">{t.myBets}</Link></li>
           </div>
           <div className="grouped-items">
-            <li className="nav-item"><Link to="/chat">{t.chat}</Link></li>
-            <li className="nav-item" onClick={togglePopup}>{t.liveSupport}</li>
+            <li className="nav-item"><img src={ChatVector} alt="Chat Icon" className="nav-icon" /><Link to="/chat">{t.chat}</Link></li>
+            <li className="nav-item" onClick={togglePopup}><img src={LiveVector} alt="Live Support Icon" className="nav-icon" />{t.liveSupport}</li>
           </div>
           <div className="grouped-items">
-            <li className="nav-item">{t.promotions}</li>
-            <li className="nav-item">{t.refer}</li>
-            <li className="nav-item">{t.redeem}</li>
+            <li className="nav-item"><img src={PromotionVector} alt="Promotions Icon" className="nav-icon" />{t.promotions}</li>
+            <li className="nav-item"><img src={ReferVector} alt="Refer Icon" className="nav-icon" />{t.refer}</li>
+            <li className="nav-item"><img src={RedeemVector} alt="Redeem Icon" className="nav-icon" />{t.redeem}</li>
           </div>
           <li className="nav-item">
             <div
               className="nav-category-header"
               onClick={toggleLanguage}
             >
+              <img src={LanguageVector} alt="Language Icon" className="nav-icon" />
               {t.language}
             </div>
             <ul
@@ -174,7 +274,7 @@ function Sidebar() {
             </ul>
           </li>
           <div className="grouped-items">
-            <li className="nav-item">{t.search}</li>
+            <li className="nav-item"><img src={SearchVector} alt="Search Icon" className="nav-icon" />{t.search}</li>
           </div>
         </ul>
       </nav>

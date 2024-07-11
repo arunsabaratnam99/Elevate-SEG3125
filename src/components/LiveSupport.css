@@ -84,6 +84,7 @@
 
 .support-list li:hover {
   background: #f0f0f0; /* Lighter background on hover */
+  border-radius: 10px;
 }
 
 .footer {

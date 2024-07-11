@@ -1,11 +1,8 @@
-
-
 .basketball-bets-page {
-  padding: 20px; /* Add 20px padding around the entire content */
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the top left */
-  padding-left: 200px; /* Add padding to the left */
+  align-items: flex-start;
 }
 
 .basketball-bets-page h1 {
@@ -14,7 +11,7 @@
   color: #ffffff;
   font-size: 39px;
   margin-bottom: 20px;
-  padding-left: 200px; /* Add padding to the left */
+  padding-left: 200px;
 }
 
 .bets-list {
@@ -22,13 +19,13 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 1300px; /* Default for larger screens */
+  max-width: 1300px;
   padding-left: 200px;
 }
 
 @media (max-width: 2000px) {
   .bets-list {
-    max-width: 1000px; 
+    max-width: 1000px;
   }
 }
 
@@ -51,19 +48,18 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Space between sections */
+  gap: 10px;
 }
 
 .bet-date {
   font-size: 18px;
   font-weight: 550;
-  width: 20%;
 }
 
 .bet-teams {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* Stretch to fill the height */
+  align-items: stretch;
   width: 100%;
 }
 
@@ -72,51 +68,81 @@
   flex-direction: column;
   font-size: 20px;
   font-weight: 550;
-  gap: 30px; /* Increase the spacing between team names */
-  flex: 1; /* Allow team-info to take available space */
-  justify-content: center; /* Center team-info vertically */
+  gap: 10px;
+  flex-basis: 25%; /* Adjust this value to end at the black line */
+  max-width: 25%; /* Adjust this value to end at the black line */
+  justify-content: center;
 }
 
 .bet-odds-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center align vertically */
-  flex: 1; /* Allow wrapper to take available space */
-  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 20px;
+  flex-basis: 75%; /* Adjust this value to take the remaining space */
+  max-width: 75%; /* Adjust this value to take the remaining space */
 }
 
 .bet-odds {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the odds box vertically */
-  justify-content: center; /* Center align vertically */
-  gap: 10px; /* Space between winner text and odds boxes */
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  position: relative;
 }
 
 .winner {
   font-size: 16px;
   color: #c4dff6;
-  text-align: center; /* Center align the winner text */
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
 }
 
 .odds {
   display: flex;
-  gap: 20px; /* Space between team odds */
+  gap: 10px;
+  text-align: left;
 }
 
 .team-odds {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the team odds box */
+  align-items: center;
 }
 
 .odds-box {
   background-color: #13232E;
-  padding: 10px 30px; /* Increase padding to make the box larger */
+  width: 265px; /* Set a fixed width for the box */
+  padding: 10px; /* Set padding to only top and bottom to avoid vertical growth */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align content */
+  align-items: flex-start;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for smooth effect */
+}
+
+.odds-box:hover {
+  background-color: #b8860b; /* Darker gold on hover */
+}
+
+.team-odds.selected .odds-box {
+  background-color: #e8c500; /* Gold on click */
+  color: #ffffff; /* Change text color to white on click */
+}
+
+.team-odds.selected .team-name {
+  color: #000000; /* Change team name to black on click */
+}
+
+.team-odds.selected .odds-value {
+  color: white; /* Change team name to black on click */
 }
 
 .team-name {
@@ -125,6 +151,10 @@
 }
 
 .odds-value {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
   font-size: 20px;
+  color: inherit; /* Inherit color from parent */
+  margin-top: 5px;
   color: #FFD700;
 }
