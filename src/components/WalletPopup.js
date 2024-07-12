@@ -773,7 +773,7 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
                   )}
                 </div>
               </div>
-              <label htmlFor="withdrawal-amount">Withdrawal Amount (min $10, max $50,000)</label>
+              <label htmlFor="withdrawal-amount">Withdrawal Amount (min $10)</label>
               <div className="withdrawal-amount-container">
                 <input
                   type="number"
@@ -783,7 +783,6 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
                   onBlur={handleBlur}
                   onFocus={handleFocus}
                   min="10"
-                  max="50000"
                   name="withdrawalAmount"
                   className={errors.withdrawalAmount ? (focused.withdrawalAmount ? 'input-error-focused' : 'input-error') : ''}
                 />
