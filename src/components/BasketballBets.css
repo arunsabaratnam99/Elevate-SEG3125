@@ -17,8 +17,8 @@
 .bets-list {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Increase gap between bet items */
-  width: calc(100% - 85px); /* Adjust width to account for padding */
+  gap: 30px; 
+  width: calc(100% - 85px); 
   padding-left: 85px;
 }
 
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 92.5%; /* Set width to 95% */
+  width: 92.5%; 
 }
 
 .bet-date {
@@ -51,8 +51,8 @@
   font-size: 20px;
   font-weight: 550;
   gap: 10px;
-  flex-basis: 25%; /* Adjust this value to end at the black line */
-  max-width: 25%; /* Adjust this value to end at the black line */
+  flex-basis: 25%; 
+  max-width: 25%; 
   justify-content: center;
 }
 
@@ -62,16 +62,18 @@
   justify-content: center;
   align-items: flex-start;
   margin-left: 20px;
-  flex-basis: 75%; /* Adjust this value to take the remaining space */
-  max-width: 75%; /* Adjust this value to take the remaining space */
+  flex-basis: 75%; 
+  max-width: 75%; 
 }
 
 .bet-odds {
   display: flex;
-  justify-content: space-between; /* Ensure space between odds buttons */
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
   position: relative;
+  cursor: pointer;
+
 }
 
 .winner {
@@ -87,7 +89,7 @@
 
 .odds {
   display: flex;
-  gap: 30px; /* Add gap between the odds buttons */
+  gap: 30px; 
   width: 95%;
 }
 

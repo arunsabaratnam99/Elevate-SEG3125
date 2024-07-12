@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import RegistrationPopup from './RegistrationPopup';
+import SignInPopup from './SignInPopup';
+import WalletPopup from './WalletPopup';
 import DollarVector from './icons/DollarVector.svg';
 import ProfileVector from './icons/ProfileVector.svg';
 
-function Header({ isLoggedIn, openRegistrationPopup, openSignInPopup }) {
+function Header({ isLoggedIn, onLoginSuccess, openRegistrationPopup, openSignInPopup, openWalletPopup, walletAmount }) {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+
+  const closeRegistrationPopup = () => setIsRegistrationOpen(false);
+  const closeSignInPopup = () => setIsSignInOpen(false);
+
   return (
     <header className={`header ${isLoggedIn ? 'logged-in' : ''}`}>
       <div className="logo-wrapper">
@@ -20,15 +29,19 @@ function Header({ isLoggedIn, openRegistrationPopup, openSignInPopup }) {
         <>
           <div className="wallet-container">
             <div className="wallet-amount">
-              0.00 <img src={DollarVector} alt="Dollar Icon" />
+              {walletAmount.toFixed(2)} <img src={DollarVector} alt="Dollar Icon" />
             </div>
-            <button className="wallet-button">Wallet</button>
+            <button className="wallet-button" onClick={openWalletPopup}>
+              Wallet
+            </button>
           </div>
           <div className="profile-icon">
             <img src={ProfileVector} alt="Profile" />
           </div>
         </>
       )}
+      {isRegistrationOpen && <RegistrationPopup isOpen={isRegistrationOpen} onClose={closeRegistrationPopup} />}
+      {isSignInOpen && <SignInPopup isOpen={isSignInOpen} onClose={closeSignInPopup} onLoginSuccess={onLoginSuccess} />}
     </header>
   );
 }

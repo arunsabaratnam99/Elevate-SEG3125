@@ -89,8 +89,8 @@
   display: flex;
   align-items: center;
   position: absolute;
-  left: 50%;
-  transform: translateX(-15%);
+  left: 55%;
+  transform: translateX(-50%);
 }
 
 .wallet-amount {
@@ -102,6 +102,7 @@
   font-size: 16px;
   border-radius: 5px 0 0 5px;
   border-right: none;
+  font-weight: 550;
 }
 
 .wallet-amount img {
@@ -111,7 +112,7 @@
 }
 
 .wallet-button {
-  background-color: #1E76CF;
+  background-color: #EDAF0D;
   color: #FFFFFF;
   padding: 11px 20px;
   border-radius: 0 5px 5px 0;
@@ -123,7 +124,7 @@
 }
 
 .wallet-button:hover {
-  background-color: #155a9e; /* Darken the color on hover */
+  background-color: #c8920b; /* Darker color on hover */
 }
 
 .profile-icon {
