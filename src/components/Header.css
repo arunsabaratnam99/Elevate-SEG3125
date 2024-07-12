@@ -6,7 +6,7 @@
   align-items: center;
   padding: 0 20px;
   position: relative;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-family: 'Fredoka', sans-serif;
   text-decoration: none;
 }
 
@@ -17,37 +17,37 @@
 }
 
 .logo a {
-  color: #EEAF0E; /* Set the color of the link inside the logo */
+  color: #EEAF0E;
   font-size: 40px;
-  font-weight: 550; /* Font weight 550 */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Make the logo a pointer */
-  transition: color 0.3s; /* Smooth transition for hover effect */
+  font-weight: 550;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .logo a:hover {
-  color: #c98a0e; /* Darken color on hover */
+  color: #c98a0e;
 }
 
 .auth-buttons {
   display: flex;
   margin-left: auto;
-  margin-right: 65px; /* Add margin-right to ensure 85px space */
+  margin-right: 65px;
 }
 
 .auth-buttons .btn {
-  width: 107px; /* Ensures both buttons are the same width */
-  height: 52px; /* Ensures both buttons are the same height */
-  font-size: 20px; /* Set text size to 20px */
-  border-radius: 10px; /* Increase border-radius to 10px */
-  font-weight: 550; /* Font weight 550 */
-  margin-left: 10px; /* Adjust spacing as needed */
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to buttons */
+  width: 107px;
+  height: 52px;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: 550;
+  margin-left: 10px;
+  font-family: 'Fredoka', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Make the button a pointer */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-button {
@@ -57,7 +57,7 @@
 }
 
 .login-button:hover {
-  background-color: #1a3147; /* Darken color on hover */
+  background-color: #1a3147;
 }
 
 .register-button {
@@ -67,5 +67,78 @@
 }
 
 .register-button:hover {
-  background-color: #d4980e; /* Darken color on hover */
+  background-color: #d4980e;
+}
+
+/* Styles for the logged-in state */
+.logged-in .header {
+  justify-content: space-between;
+}
+
+.logged-in .logo-wrapper {
+  position: static;
+  transform: none;
+  margin-left: calc(186px + 85px);
+}
+
+.logged-in .auth-buttons {
+  display: none;
+}
+
+.wallet-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-15%);
+}
+
+.wallet-amount {
+  display: flex;
+  align-items: center;
+  background-color: #214055;
+  padding: 11px 25px;
+  color: #FFFFFF;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.wallet-amount img {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.wallet-button {
+  background-color: #1E76CF;
+  color: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  border: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  transition: background-color 0.3s; /* Add transition for smooth effect */
+}
+
+.wallet-button:hover {
+  background-color: #155a9e; /* Darken the color on hover */
+}
+
+.profile-icon {
+  margin-left: auto;
+  margin-right: 65px; /* Align the profile icon with the auth buttons when not logged in */
+}
+
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: filter 0.3s; /* Add transition for smooth effect */
+}
+
+.profile-icon img:hover {
+  filter: brightness(0.8); /* Darken the icon on hover */
 }

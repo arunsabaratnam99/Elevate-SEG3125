@@ -17,7 +17,7 @@
 .bets-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px; /* Increase gap between bet items */
   width: calc(100% - 85px); /* Adjust width to account for padding */
   padding-left: 85px;
 }
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: calc(100% - 123px); /* Adjust width to account for padding */
+  width: 92.5%; /* Set width to 95% */
 }
 
 .bet-date {
@@ -68,10 +68,9 @@
 
 .bet-odds {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Ensure space between odds buttons */
   align-items: center;
-  justify-content: center;
-  gap: 0px;
+  width: 100%;
   position: relative;
 }
 
@@ -80,7 +79,7 @@
   color: #c4dff6;
   position: absolute;
   top: -30px;
-  left: 50%;
+  left: 47%;
   transform: translateX(-50%);
   font-family: 'Fredoka', sans-serif;
   font-weight: 550;
@@ -88,19 +87,21 @@
 
 .odds {
   display: flex;
-  gap: 10px;
-  text-align: left;
+  gap: 30px; /* Add gap between the odds buttons */
+  width: 95%;
 }
 
 .team-odds {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1; /* Make the buttons grow to fill available space */
+  max-width: calc(50% - 15px); /* Ensure the buttons take equal space */
 }
 
 .odds-box {
   background-color: #13232E;
-  width: 450px; /* Set a fixed width for the box */
+  width: 100%; /* Set a flexible width for the box */
   padding: 10px; /* Set padding to only top and bottom to avoid vertical growth */
   border-radius: 5px;
   display: flex;
