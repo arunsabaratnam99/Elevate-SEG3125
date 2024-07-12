@@ -6,7 +6,7 @@ import twitchLogo from './img/logos_twitch.svg';
 import visibleIcon from './img/VectorVisibleVector.svg';
 import notVisibleIcon from './img/VectorNotVisibleVector.svg';
 
-const SignInPopup = ({ isOpen, onClose, openRegistrationPopup, onLoginSuccess }) => {
+const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({
     emailOrUsername: '',
@@ -49,7 +49,8 @@ const SignInPopup = ({ isOpen, onClose, openRegistrationPopup, onLoginSuccess })
 
     if (Object.keys(newErrors).length === 0) {
       alert('Sign In successful!');
-      onLoginSuccess(); // Use the correct function here
+      onLoginSuccess(); // Call the onLoginSuccess prop
+      onClose(); // Close the popup
     } else {
       setErrors(newErrors);
     }

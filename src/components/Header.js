@@ -1,31 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import RegistrationPopup from './RegistrationPopup';
-import SignInPopup from './SignInPopup';
 import DollarVector from './icons/DollarVector.svg';
-import ProfileVector from './icons/ProfileVector.svg'; // Correct icon path
+import ProfileVector from './icons/ProfileVector.svg';
 
-function Header({ isLoggedIn, onLoginSuccess }) {
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
-
-  const openRegistrationPopup = () => {
-    setIsRegistrationOpen(true);
-  };
-
-  const closeRegistrationPopup = () => {
-    setIsRegistrationOpen(false);
-  };
-
-  const openSignInPopup = () => {
-    setIsSignInOpen(true);
-  };
-
-  const closeSignInPopup = () => {
-    setIsSignInOpen(false);
-  };
-
+function Header({ isLoggedIn, openRegistrationPopup, openSignInPopup }) {
   return (
     <header className={`header ${isLoggedIn ? 'logged-in' : ''}`}>
       <div className="logo-wrapper">
@@ -50,8 +29,6 @@ function Header({ isLoggedIn, onLoginSuccess }) {
           </div>
         </>
       )}
-      {isRegistrationOpen && <RegistrationPopup isOpen={isRegistrationOpen} onClose={closeRegistrationPopup} />}
-      {isSignInOpen && <SignInPopup isOpen={isSignInOpen} onClose={closeSignInPopup} onLoginSuccess={onLoginSuccess} />}
     </header>
   );
 }

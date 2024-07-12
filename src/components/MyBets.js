@@ -15,7 +15,7 @@ const MyBets = () => {
             <div className="winner-betdetails">Winner (incl. overtime)</div>
             <div className="team-winner">
               <span>Edmonton Oilers</span>
-              <span className="odds">1.80</span>
+              <span className="odds-my-bets">1.80</span>
             </div>
             <div className="bet-time">Fri, Jun 21 20:00</div>
           </div>
@@ -41,7 +41,7 @@ const MyBets = () => {
             <div className="winner-betdetails">Winner (incl. overtime)</div>
             <div className="team-winner">
               <span>Los Angeles Lakers</span>
-              <span className="odds">2.05</span>
+              <span className="odds-my-bets">2.05</span>
             </div>
             <div className="bet-time">Sat, Jun 22 19:30</div>
           </div>
@@ -67,7 +67,7 @@ const MyBets = () => {
             <div className="winner-betdetails">Winner (incl. overtime)</div>
             <div className="team-winner">
               <span>Golden State Warriors</span>
-              <span className="odds">1.90</span>
+              <span className="odds-my-bets">1.90</span>
             </div>
             <div className="bet-time">Sun, Jun 23 21:00</div>
           </div>

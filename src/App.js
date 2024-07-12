@@ -36,7 +36,6 @@ function App() {
     closeSignInPopup();
   };
 
-
   return (
     <div className="App">
       <Router>
@@ -62,14 +61,18 @@ function App() {
         </div>
       </Router>
       {isRegistrationOpen && (
-        <RegistrationPopup isOpen={isRegistrationOpen} onClose={closeRegistrationPopup} />
+        <RegistrationPopup 
+          isOpen={isRegistrationOpen} 
+          onClose={closeRegistrationPopup} 
+          openSignInPopup={openSignInPopup} // Pass the openSignInPopup function
+        />
       )}
       {isSignInOpen && (
         <SignInPopup 
           isOpen={isSignInOpen} 
           onClose={closeSignInPopup} 
           onLoginSuccess={handleLoginSuccess}
-          openRegistrationPopup={openRegistrationPopup} 
+          openRegistrationPopup={openRegistrationPopup} // Pass the openRegistrationPopup function
         />
       )}
     </div>
