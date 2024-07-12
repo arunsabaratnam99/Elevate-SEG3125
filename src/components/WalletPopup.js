@@ -54,19 +54,19 @@ const bankDetails = {
 
 const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCard, onDeposit, onWithdraw }) => {
   const [activeTab, setActiveTab] = useState('deposit');
-  const [selectedCard, setSelectedCard] = useState('');
+  const [selectedCard, setSelectedCard] = useState(localStorage.getItem('selectedCard') || '');
   const [newCardNumber, setNewCardNumber] = useState('');
   const [newCardName, setNewCardName] = useState('');
   const [newExpiryMonth, setNewExpiryMonth] = useState('');
   const [newExpiryYear, setNewExpiryYear] = useState('');
-  const [expiryMonth, setExpiryMonth] = useState('');
-  const [expiryYear, setExpiryYear] = useState('');
+  const [expiryMonth, setExpiryMonth] = useState(localStorage.getItem('expiryMonth') || '');
+  const [expiryYear, setExpiryYear] = useState(localStorage.getItem('expiryYear') || '');
   const [cvv, setCvv] = useState('');
   const [depositAmount, setDepositAmount] = useState('');
   const [isAddCardExpanded, setIsAddCardExpanded] = useState(false);
   const [errors, setErrors] = useState({});
   const [focused, setFocused] = useState({});
-  
+
   // Withdraw state variables
   const [bankName, setBankName] = useState(localStorage.getItem('bankName') || '');
   const [accountType, setAccountType] = useState(localStorage.getItem('accountType') || '');
@@ -78,13 +78,13 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
 
   useEffect(() => {
     // Clear all input values and errors when the active tab changes
-    setSelectedCard('');
+    setSelectedCard(localStorage.getItem('selectedCard') || '');
     setNewCardNumber('');
     setNewCardName('');
     setNewExpiryMonth('');
     setNewExpiryYear('');
-    setExpiryMonth('');
-    setExpiryYear('');
+    setExpiryMonth(localStorage.getItem('expiryMonth') || '');
+    setExpiryYear(localStorage.getItem('expiryYear') || '');
     setCvv('');
     setDepositAmount('');
     setErrors({});
@@ -362,10 +362,10 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
 
     if (Object.keys(newErrors).length === 0) {
       onDeposit(parseFloat(depositAmount));
-      // Clear deposit-related fields after successful deposit
-      setSelectedCard('');
-      setExpiryMonth('');
-      setExpiryYear('');
+      // Save deposit-related fields to localStorage after successful deposit
+      localStorage.setItem('selectedCard', selectedCard);
+      localStorage.setItem('expiryMonth', expiryMonth);
+      localStorage.setItem('expiryYear', expiryYear);
       setCvv('');
       setDepositAmount('');
       alert('Deposit successful!');
@@ -415,13 +415,14 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
         bankInstitutionNumber,
         amount: parseFloat(withdrawalAmount)
       });
-      // Clear withdraw-related fields after successful withdrawal
+      // Save withdraw-related fields to localStorage after successful withdrawal
       localStorage.setItem('bankName', bankName);
       localStorage.setItem('accountType', accountType);
       localStorage.setItem('accountNumber', accountNumber);
       localStorage.setItem('swiftCode', swiftCode);
       localStorage.setItem('bankTransitNumber', bankTransitNumber);
       localStorage.setItem('bankInstitutionNumber', bankInstitutionNumber);
+      // Clear withdraw-related fields after successful withdrawal
       setWithdrawalAmount('');
       alert('Withdrawal successful!');
     } else {
