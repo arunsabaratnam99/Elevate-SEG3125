@@ -7,19 +7,21 @@ import BasketballBets from './components/SportsBets/BasketballBets';
 import SoccerBets from './components/SportsBets/SoccerBets';
 import HockeyBets from './components/SportsBets/HockeyBets';
 import FootballBets from './components/SportsBets/FootballBets';
-import TennisBets from './components/SportsBets/TennisBets'; // Import TennisBets component
-import BaseballBets from './components/SportsBets/BaseballBets'; // Import BaseballBets component
-import CricketBets from './components/SportsBets/CricketBets'; // Import CricketBets component
-import VolleyballBets from './components/SportsBets/VolleyballBets'; // Import VolleyballBets component
-import TableTennisBets from './components/SportsBets/TableTennisBets'; // Import TableTennisBets component
-import ValorantBets from './components/SportsBets/ValorantBets'; // Import ValorantBets component
-import LoLBets from './components/SportsBets/LoLBets'; // Import LoLBets component
-import CS2Bets from './components/SportsBets/CS2Bets'; // Import CS2Bets component
+import TennisBets from './components/SportsBets/TennisBets';
+import BaseballBets from './components/SportsBets/BaseballBets';
+import CricketBets from './components/SportsBets/CricketBets';
+import VolleyballBets from './components/SportsBets/VolleyballBets';
+import TableTennisBets from './components/SportsBets/TableTennisBets';
+import ValorantBets from './components/SportsBets/ValorantBets';
+import LoLBets from './components/SportsBets/LoLBets';
+import CS2Bets from './components/SportsBets/CS2Bets';
 import MyBets from './components/MyBets';
 import Chat from './components/Chat';
 import RegistrationPopup from './components/RegistrationPopup';
 import SignInPopup from './components/SignInPopup';
 import WalletPopup from './components/WalletPopup';
+import RedeemPopup from './components/RedeemPopup';
+import ReferPopup from './components/ReferPopup'; // Import ReferPopup component
 import BetDetail from './components/BetDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -32,6 +34,8 @@ function App() {
   const [registeredCards, setRegisteredCards] = useState([]); // Registered cards state
   const [selectedBets, setSelectedBets] = useState([]); // Selected bets state
   const [myBets, setMyBets] = useState([]); // State to store placed bets
+  const [isRedeemPopupOpen, setIsRedeemPopupOpen] = useState(false); // State to manage RedeemPopup visibility
+  const [isReferPopupOpen, setIsReferPopupOpen] = useState(false); // State to manage ReferPopup visibility
 
   const handleBetClick = (newSelectedBets) => {
     setSelectedBets(newSelectedBets);
@@ -92,6 +96,12 @@ function App() {
     alert(`Cashout successful! CA$${cashoutAmount.toFixed(2)} has been added to your wallet.`);
   };
 
+  const openRedeemPopup = () => setIsRedeemPopupOpen(true);
+  const closeRedeemPopup = () => setIsRedeemPopupOpen(false);
+
+  const openReferPopup = () => setIsReferPopupOpen(true);
+  const closeReferPopup = () => setIsReferPopupOpen(false);
+
   return (
     <div className="App">
       <Router>
@@ -106,8 +116,8 @@ function App() {
           />
         </div>
         <div className="main-layout">
-        <Sidebar betslipOpen={selectedBets.length > 0} />
-        <div className={`content-container ${selectedBets.length ? 'with-detail' : ''}`}>
+          <Sidebar betslipOpen={selectedBets.length > 0} openRedeemPopup={openRedeemPopup} openReferPopup={openReferPopup} />
+          <div className={`content-container ${selectedBets.length ? 'with-detail' : ''}`}>
             <Routes>
               <Route path="/" element={<Homepage onBetClick={handleBetClick} />} />
               <Route path="/basketball" element={<BasketballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
@@ -165,6 +175,19 @@ function App() {
           onSaveCard={handleSaveCard}
           onDeposit={handleDeposit}
           onWithdraw={handleWithdraw}
+        />
+      )}
+      {isRedeemPopupOpen && (
+        <RedeemPopup
+          isOpen={isRedeemPopupOpen}
+          onClose={closeRedeemPopup}
+        />
+      )}
+      {isReferPopupOpen && (
+        <ReferPopup
+          isOpen={isReferPopupOpen}
+          onClose={closeReferPopup}
+          username={isLoggedIn ? 'username' : 'guest'} 
         />
       )}
     </div>

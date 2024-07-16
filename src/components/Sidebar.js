@@ -143,7 +143,7 @@ const translations = {
   },
 };
 
-function Sidebar() {
+function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup }) {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [subNavHeights, setSubNavHeights] = useState({});
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -242,8 +242,8 @@ function Sidebar() {
           </div>
           <div className="grouped-items">
             <li className="nav-item"><img src={PromotionVector} alt="Promotions Icon" className="sub-nav-icon" />{t.promotions}</li>
-            <li className="nav-item"><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
-            <li className="nav-item"><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
+            <li className="nav-item" onClick={openReferPopup}><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
+            <li className="nav-item" onClick={openRedeemPopup}><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
           </div>
           <li className="nav-item">
             <div
