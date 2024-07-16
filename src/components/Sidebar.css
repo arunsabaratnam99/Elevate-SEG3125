@@ -10,6 +10,10 @@
   position: relative;
 }
 
+.sidebar.betslip-open .popup {
+  margin-left: 300px; /* Adjust this value based on the width of the betslip */
+}
+
 .nav {
   list-style-type: none;
   padding: 0 10px 0 10px;

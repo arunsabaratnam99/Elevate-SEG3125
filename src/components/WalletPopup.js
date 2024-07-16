@@ -4,6 +4,8 @@ import WalletVector from './icons/WalletVector.svg';
 import DollarVector from './icons/DollarVector.svg';
 import PlusIcon from './icons/PlusVector.svg';
 import ErrorVector from './icons/ErrorVector.svg';
+import Notification from './Notification'; // Import the Notification component
+
 
 const bankDetails = {
   'All Trans Financial Services': { institutionNumber: '123', swiftCode: 'ATFS1234' },
@@ -54,43 +56,51 @@ const bankDetails = {
 
 const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCard, onDeposit, onWithdraw }) => {
   const [activeTab, setActiveTab] = useState('deposit');
-  const [selectedCard, setSelectedCard] = useState(localStorage.getItem('selectedCard') || '');
+  const [selectedCard, setSelectedCard] = useState('');
   const [newCardNumber, setNewCardNumber] = useState('');
   const [newCardName, setNewCardName] = useState('');
   const [newExpiryMonth, setNewExpiryMonth] = useState('');
   const [newExpiryYear, setNewExpiryYear] = useState('');
-  const [expiryMonth, setExpiryMonth] = useState(localStorage.getItem('expiryMonth') || '');
-  const [expiryYear, setExpiryYear] = useState(localStorage.getItem('expiryYear') || '');
+  const [expiryMonth, setExpiryMonth] = useState('');
+  const [expiryYear, setExpiryYear] = useState('');
   const [cvv, setCvv] = useState('');
   const [depositAmount, setDepositAmount] = useState('');
   const [isAddCardExpanded, setIsAddCardExpanded] = useState(false);
   const [errors, setErrors] = useState({});
   const [focused, setFocused] = useState({});
+  const [notifications, setNotifications] = useState([]); // Notification state
+
 
   // Withdraw state variables
-  const [bankName, setBankName] = useState(localStorage.getItem('bankName') || '');
-  const [accountType, setAccountType] = useState(localStorage.getItem('accountType') || '');
-  const [accountNumber, setAccountNumber] = useState(localStorage.getItem('accountNumber') || '');
-  const [swiftCode, setSwiftCode] = useState(localStorage.getItem('swiftCode') || '');
-  const [bankTransitNumber, setBankTransitNumber] = useState(localStorage.getItem('bankTransitNumber') || '');
-  const [bankInstitutionNumber, setBankInstitutionNumber] = useState(localStorage.getItem('bankInstitutionNumber') || '');
+  const [bankName, setBankName] = useState('');
+  const [accountType, setAccountType] = useState('');
+  const [accountNumber, setAccountNumber] = useState('');
+  const [swiftCode, setSwiftCode] = useState('');
+  const [bankTransitNumber, setBankTransitNumber] = useState('');
+  const [bankInstitutionNumber, setBankInstitutionNumber] = useState('');
   const [withdrawalAmount, setWithdrawalAmount] = useState('');
 
   useEffect(() => {
-    // Clear all input values and errors when the active tab changes
-    setSelectedCard(localStorage.getItem('selectedCard') || '');
+    // Clear all input values and errors when the active tab changes or component mounts
+    setSelectedCard('');
     setNewCardNumber('');
     setNewCardName('');
     setNewExpiryMonth('');
     setNewExpiryYear('');
-    setExpiryMonth(localStorage.getItem('expiryMonth') || '');
-    setExpiryYear(localStorage.getItem('expiryYear') || '');
+    setExpiryMonth('');
+    setExpiryYear('');
     setCvv('');
     setDepositAmount('');
     setErrors({});
     setFocused({});
     // Clear withdrawal inputs
     setWithdrawalAmount('');
+    setBankName('');
+    setAccountType('');
+    setAccountNumber('');
+    setSwiftCode('');
+    setBankTransitNumber('');
+    setBankInstitutionNumber('');
   }, [activeTab]);
 
   const handleBlur = (event) => {
@@ -368,6 +378,7 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
       localStorage.setItem('expiryYear', expiryYear);
       setCvv('');
       setDepositAmount('');
+      showNotification('success', 'Success', 'Deposit successful!');
       alert('Deposit successful!');
     } else {
       setErrors(newErrors);
@@ -429,6 +440,13 @@ const WalletPopup = ({ isOpen, onClose, walletAmount, registeredCards, onSaveCar
       setErrors(newErrors);
     }
   };
+  const showNotification = (type, header, message) => {
+    setNotifications([...notifications, { type, header, message }]);
+    setTimeout(() => {
+      setNotifications((notifications) => notifications.slice(1));
+    }, 3000);
+  };
+
 
   if (!isOpen) return null;
 

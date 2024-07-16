@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import './BasketballBets.css';
 
-const BasketballBets = () => {
-  const [selectedTeams, setSelectedTeams] = useState([]);
-
-  const handleClick = (team) => {
-    setSelectedTeams((prevSelectedTeams) =>
-      prevSelectedTeams.includes(team)
-        ? prevSelectedTeams.filter((t) => t !== team)
-        : [...prevSelectedTeams, team]
-    );
+const BasketballBets = ({ onBetClick, selectedBets }) => {
+  const handleClick = (team, odds, opponent, marketName) => {
+    const isSelected = selectedBets.some((selectedBet) => selectedBet.team === team);
+    if (isSelected) {
+      const newSelectedBets = selectedBets.filter((selectedBet) => selectedBet.team !== team);
+      onBetClick(newSelectedBets);
+    } else {
+      const newSelectedBets = [...selectedBets, { team, odds, opponent, marketName }];
+      onBetClick(newSelectedBets);
+    }
   };
 
   const betItems = [
     {
       date: "Mon. Jun 24, 22:00",
+      marketName: "Winner (Incl. Overtime)",
       teams: [
         { name: "Toronto Raptors", odds: "1.78" },
         { name: "Houston Rockets", odds: "2.20" }
@@ -22,6 +24,7 @@ const BasketballBets = () => {
     },
     {
       date: "Tues. Jun 25, 20:30",
+      marketName: "Winner (Incl. Overtime)",
       teams: [
         { name: "Boston Celtics", odds: "1.83" },
         { name: "Dallas Mavericks", odds: "2.03" }
@@ -29,6 +32,7 @@ const BasketballBets = () => {
     },
     {
       date: "Mon. Jun 25, 21:00",
+      marketName: "Winner (Incl. Overtime)",
       teams: [
         { name: "Los Angeles Lakers", odds: "3.23" },
         { name: "Denver Nuggets", odds: "1.26" }
@@ -36,6 +40,7 @@ const BasketballBets = () => {
     },
     {
       date: "Tues. Jun 26, 20:00",
+      marketName: "Winner (Incl. Overtime)",
       teams: [
         { name: "Phoenix Suns", odds: "1.06" },
         { name: "Washington Wizards", odds: "3.12" }
@@ -58,12 +63,12 @@ const BasketballBets = () => {
               </div>
               <div className="bet-odds-wrapper">
                 <div className="bet-odds">
-                  <div className="winner">Winner (incl. overtime)</div>
+                  <div className="winner">{betItem.marketName}</div>
                   <div className="odds">
                     {betItem.teams.map((team, idx) => (
                       <div
-                        className={`team-odds ${selectedTeams.includes(team.name) ? 'selected' : ''}`}
-                        onClick={() => handleClick(team.name)}
+                        className={`team-odds ${selectedBets.some((selectedBet) => selectedBet.team === team.name) ? 'selected' : ''}`}
+                        onClick={() => handleClick(team.name, team.odds, betItem.teams.find(t => t.name !== team.name).name, betItem.marketName)}
                         key={idx}
                       >
                         <div className="odds-box">

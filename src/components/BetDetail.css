@@ -1,0 +1,542 @@
+/* Add this CSS for the sliding animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.bet-detail-container {
+  width: 370px;
+  background-color: #0F212E;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* Start off-screen */
+  animation: slideIn 0.3s forwards; /* Apply the slide-in animation */
+}
+
+.bet-detail-container.hidden {
+  animation: slideOut 0.3s forwards; /* Apply the slide-out animation */
+}
+
+.bet-slip-header {
+  background-color: #0F212E;
+  color: #FFFFFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 25px;
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.75);
+  position: relative;
+  z-index: 1000;
+  padding: 25px 20px;
+}
+
+.hr-line-bet-slip {
+  border: 0;
+  border-top: 2px solid #213743;
+  margin: 10px 0px 0px 0px; /* Add margin for spacing */
+}
+
+.bet-slip-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bet-slip-icon {
+  width: 31px;
+  height: 31px;
+}
+
+.bet-slip-title {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.bet-slip-close {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.bet-slip-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 25px;
+  overflow: hidden;
+  width: 50%; /* Adjust width as needed */
+  background-color: #1A2C38; /* Background color for tabs */
+  margin: 10px 0 0 10px; /* Adjust alignment as needed */
+}
+
+.bet-slip-tab {
+  flex: 1;
+  border-radius: 25px; /* Adjust to create the space around the fill */
+  margin: 5px; /* Add space between the tabs */
+  padding: 10px 0; /* Increase padding to increase height */
+  text-align: center;
+  color: #888; /* Inactive tab color */
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  background-color: transparent; /* Initial background color */
+}
+
+.bet-slip-tab:hover {
+  background-color: #2F4452; /* Hover color */
+  color: white;
+}
+
+.bet-slip-tab.active {
+  background-color: #2F4452; /* Active tab color */
+  color: white;
+}
+
+.bet-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+  background-color: transparent; /* Match the background color */
+  color: #FFFFFF; /* Text color */
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 15px;
+  margin-top: 10px; /* Add margin to separate from tabs */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent; /* Match the background color */
+  color: #B1BAD3; /* Text color */
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s; /* Add transition for color */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #3F5460;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s; /* Add transition for color */
+}
+
+.dropdown-content a.selected {
+  color: #EEAF0E; /* Selected option color */
+  transition: color 0.3s; /* Add transition for selected color */
+}
+
+.dropdown-content a.selected:hover {
+  color: #aa7c07; /* Hover color for selected option */
+}
+
+.dropdown-content a:hover {
+  color: #1A2C38; /* Darker text color on hover */
+}
+
+.dropdown:hover .dropbtn {
+  color: #FFFFFF;
+  transition: color 0.3s; /* Add transition for color */
+}
+
+.clear-all {
+  background-color: transparent; /* Match the background color */
+  color: #FFFFFF; /* Text color */
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+  padding: 10px 0; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  align-self: flex-start; /* Align to the top */
+}
+
+.bet-detail-content-new {
+  padding: 10px;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  flex-grow: 1; /* Ensure content grows to fill space */
+  overflow-y: auto; /* Make content scrollable */
+  overflow-x: hidden;
+  margin-bottom: 100px; /* Adjust this to be the height of the footer */
+}
+
+.dropdown-icon {
+  margin-left: 8px; /* Space between text and icon */
+  width: 23px; /* Adjust width as needed */
+  height: 23px; /* Adjust height as needed */
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.bet-footer {
+  background-color: #213743;
+  padding: 16px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #213743;
+  position: fixed;
+  bottom: 0;
+  width: 340px;
+}
+
+.bet-summary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bet-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.bet-summary-label {
+  color: #B1BAD3;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+}
+
+.bet-summary-value {
+  color: #FFFFFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+}
+
+.currency-icon {
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.bet-button {
+  background-color: #EEAF0E; /* Button color */
+  color: #FFFFFF;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.bet-button:hover {
+  background-color: #bd8a0a;
+}
+
+.bet-item-new {
+  background-color: #213743;
+  border-radius: 10px;
+  color: #ffffff;
+  width: max-content; /* Allow the card to adjust to the content width */
+  min-width: 280px; /* Minimum width to ensure the card is not too narrow */
+  max-width: 100%; /* Ensure the card doesn't exceed the container width */
+  overflow: hidden;
+  flex-grow: 1;
+  box-sizing: border-box; /* Ensure padding and width calculation */
+  margin-bottom: 20px; /* Add margin between bet items */
+}
+
+.bet-card-header-new {
+  background-color: #2F4553; /* Different color for header */
+  padding: 5px;
+  text-align: left;
+  color: #8E9AB0; /* Text color */
+  border-radius: 0.25rem 0.25rem 0 0; /* Round top corners */
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2f4553;
+  padding: .5rem .75rem;
+}
+
+.bet-card-header-new span {
+  width: 100%;
+  max-width: calc(100% - 3rem);
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 1;
+  text-overflow: ellipsis;
+  color: rgba(177,186,211,1)
+}
+
+.bet-item-close-new {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+}
+
+.bet-item-content-new {
+  width: 93%;
+  flex-shrink: 0;
+  align-items: flex-end;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "market market market maxBet maxBet maxBet"
+    "outcome outcome outcome outcome odds odds"
+    "footer footer footer footer footer footer";
+  padding: .5rem .75rem .75rem;
+  background: #213743;
+  box-shadow: 0 4px 6px -1px rgba(27, 23, 23, .2), 0 2px 4px -1px rgba(0, 0, 0, .12);
+}
+
+.market-name {
+  grid-area: market;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color:#b1bad3;
+  line-height: 1.5;
+  text-align: left;
+  justify-content: flex-start;
+  font-size: .875rem;
+}
+
+.max-bet{
+  grid-area: maxBet;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.outcome-name {
+  font-weight: 550;
+  color: #fff;
+  display:inline-flex;
+  grid-area: outcome;
+  text-transform: capitalize;
+  align-items:baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.5;
+  text-align: left;
+  justify-content: flex-start;
+  font-size: .875rem;
+}
+
+.odds-payout {
+  grid-area: odds;
+  justify-self: flex-end;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  transition: color .3s;
+  position: relative;
+  font-feature-settings: "tnum";
+  color: #4391e7;
+  line-height: 1.5;
+  text-align: left;
+  justify-content: flex-start;
+  font-size: .875rem;
+  font-weight: 700;
+  align-items: center;
+  display: inline-flex;
+}
+
+.footer-bet {
+  grid-template-areas:
+        "amount amount amount return return return"
+        "amount amount amount estimatedAmount estimatedAmount estimatedAmount";
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: .25rem;
+  padding: 0;
+  border: 0;
+}
+
+.info-footer {
+  display: flex;
+  grid-area: amount;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.stacked {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  position:relative;
+  display:inline-flex;
+}
+
+.input-wrap {
+  width: 100%;
+  display:flex;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 2px 0 rgba(0, 0, 0, .12);
+  border-radius: 25rem;
+}
+
+.input-content {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+}
+
+.input-content input {
+  padding-right: 2em;
+  padding: .5em ;
+  width: 100%;
+  color: #fff;
+  background: #0f212e;
+  border: 2px solid #253946;
+  border-radius: .25rem;
+  letter-spacing: 0;
+  font-weight: 550;
+  transition: all 0.25s;
+  outline: 0;
+  margin: 0;
+  cursor: text;
+  appearance: none;
+  font-size: .875rem;
+  box-shadow: none;
+}
+
+.input-content input:hover {
+  border:2px solid #2f4553;
+}
+
+.input-content input:focus{
+  border: 2px solid #4A6377
+}
+
+.currency-icon-1 {
+  width: 18px;
+  height: 18px;
+  right: .75em;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #b1bad3;
+  z-index: 2;
+}
+
+.estimated-label{
+  grid-area: return;
+  justify-self: flex-end;
+  align-self: flex-start;
+  font-size: .75rem;
+  color: #b1bad3;
+  line-height: 1.5;
+  text-align: left;
+  justify-content: flex-start;
+  font-size: .75rem;
+  font-weight: 400;
+}
+.estimated-amount {
+  grid-area: estimatedAmount;
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.currency-bet{
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.content-bet{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  max-width: 12ch;
+  color:#b1bad3;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.currency-icon-2{
+  max-width: 12ch;
+  color: #b1bad3;
+  line-height: 1.5;
+  text-align: left;
+  margin-left: .25rem;
+  justify-content: flex-start;
+  font-size: .875rem;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 18px;
+  height: 18px;
+}
+
+.input-content input[type="number"]::-webkit-inner-spin-button,
+.input-content input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+.input-content input[type="number"]:hover::-webkit-inner-spin-button,
+.input-content input[type="number"]:hover::-webkit-outer-spin-button {
+  display: block;
+  position: absolute;
+  left: 0.5em; /* Adjust as needed */
+}

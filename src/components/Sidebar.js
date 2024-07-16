@@ -93,7 +93,7 @@ const translations = {
     ],
     sportsList: [
       { name: "Basketball", icon: BasketballVector },
-      { name: "Football", icon: FootballVector },
+      { name: "Football", icon: SoccerVector },
       { name: "Hockey", icon: HockeyVector },
       { name: "Football américain", icon: FootballVector },
       { name: "Tennis", icon: TennisVector },
@@ -181,6 +181,10 @@ function Sidebar() {
 
   const t = translations[selectedLanguage];
 
+  const formatPath = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '-');
+  };
+
   return (
     <aside className="sidebar">
       <nav>
@@ -222,7 +226,7 @@ function Sidebar() {
               {t.sportsList.map((sport, index) => (
                 <li key={index}>
                   <img src={sport.icon} alt={`${sport.name} Icon`} className="sub-nav-icon" />
-                  <Link to={`/${sport.name.toLowerCase()}`}>{sport.name}</Link>
+                  <Link to={`/${formatPath(sport.name)}`}>{sport.name}</Link>
                 </li>
               ))}
             </ul>

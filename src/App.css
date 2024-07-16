@@ -17,4 +17,17 @@
   flex-grow: 1;
   z-index: 1;
   background-color: #1A2C38;
+  transition: margin-right 0.3s;
+}
+
+.content-container.with-detail {
+  margin-right: 370px; /* Width of the BetDetail */
+}
+
+.header-container {
+  transition: margin-right 0.3s;
+}
+
+.header-container.with-detail {
+  margin-right: 370px; /* Adjust as needed */
 }
