@@ -38,23 +38,24 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
   const handleSubmit = (event) => {
     event.preventDefault();
     const newErrors = {};
-
+  
     if (!validateEmailOrUsername(formData.emailOrUsername)) {
       newErrors.emailOrUsername = 'Please enter your email or username.';
     }
-
+  
     if (!validatePassword(formData.password)) {
       newErrors.password = 'Please enter your password.';
     }
-
+  
     if (Object.keys(newErrors).length === 0) {
       alert('Sign In successful!');
-      onLoginSuccess(); // Call the onLoginSuccess prop
-      onClose(); // Close the popup
+      onLoginSuccess(formData.emailOrUsername); 
+      onClose(); 
     } else {
       setErrors(newErrors);
     }
   };
+  
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);

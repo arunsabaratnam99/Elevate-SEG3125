@@ -21,7 +21,7 @@ import RegistrationPopup from './components/RegistrationPopup';
 import SignInPopup from './components/SignInPopup';
 import WalletPopup from './components/WalletPopup';
 import RedeemPopup from './components/RedeemPopup';
-import ReferPopup from './components/ReferPopup'; // Import ReferPopup component
+import ReferPopup from './components/ReferPopup'; 
 import BetDetail from './components/BetDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -29,13 +29,14 @@ function App() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('guest'); 
   const [isWalletOpen, setIsWalletOpen] = useState(false);
-  const [walletAmount, setWalletAmount] = useState(0.00); // Initial wallet amount
-  const [registeredCards, setRegisteredCards] = useState([]); // Registered cards state
-  const [selectedBets, setSelectedBets] = useState([]); // Selected bets state
-  const [myBets, setMyBets] = useState([]); // State to store placed bets
-  const [isRedeemPopupOpen, setIsRedeemPopupOpen] = useState(false); // State to manage RedeemPopup visibility
-  const [isReferPopupOpen, setIsReferPopupOpen] = useState(false); // State to manage ReferPopup visibility
+  const [walletAmount, setWalletAmount] = useState(0.00); 
+  const [registeredCards, setRegisteredCards] = useState([]);
+  const [selectedBets, setSelectedBets] = useState([]); 
+  const [myBets, setMyBets] = useState([]); 
+  const [isRedeemPopupOpen, setIsRedeemPopupOpen] = useState(false); 
+  const [isReferPopupOpen, setIsReferPopupOpen] = useState(false); 
 
   const handleBetClick = (newSelectedBets) => {
     setSelectedBets(newSelectedBets);
@@ -54,8 +55,9 @@ function App() {
   const openWalletPopup = () => setIsWalletOpen(true);
   const closeWalletPopup = () => setIsWalletOpen(false);
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = (loggedInUsername) => {
     setIsLoggedIn(true);
+    setUsername(loggedInUsername);
     closeSignInPopup();
   };
 
@@ -77,7 +79,7 @@ function App() {
 
   const handlePlaceBets = (wagers) => {
     const totalWager = wagers.reduce((total, wager) => total + parseFloat(wager || 0), 0);
-    setWalletAmount(walletAmount - totalWager); // Deduct the total wager from the wallet amount
+    setWalletAmount(walletAmount - totalWager); 
 
     const placedBets = selectedBets.map((bet, index) => ({
       ...bet,
@@ -85,8 +87,8 @@ function App() {
       returnAmount: wagers[index] * bet.odds
     }));
 
-    setMyBets([...myBets, ...placedBets]); // Add placed bets to My Bets
-    setSelectedBets([]); // Clear the selected bets after placing
+    setMyBets([...myBets, ...placedBets]); 
+    setSelectedBets([]); 
   };
 
   const handleCashout = (bet) => {
@@ -187,7 +189,7 @@ function App() {
         <ReferPopup
           isOpen={isReferPopupOpen}
           onClose={closeReferPopup}
-          username={isLoggedIn ? 'username' : 'guest'} 
+          username={username} 
         />
       )}
     </div>
