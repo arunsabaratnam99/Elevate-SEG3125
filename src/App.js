@@ -24,6 +24,7 @@ import RedeemPopup from './components/RedeemPopup';
 import ReferPopup from './components/ReferPopup'; 
 import BetDetail from './components/BetDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Promotions from './components/Promotions';
 
 function App() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -136,6 +137,7 @@ function App() {
               <Route path="/cs2" element={<CS2Bets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
               <Route path="/my-bets" element={<MyBets bets={myBets} onCashout={handleCashout} />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/promotions" element={<Promotions />} />
             </Routes>
           </div>
           {selectedBets.length > 0 && (

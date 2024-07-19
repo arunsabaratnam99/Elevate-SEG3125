@@ -1,0 +1,138 @@
+.promotions-header-section {
+  background-color: #213643; /* Different color for the header */
+  padding: 25px 85px; /* Ensure padding is 85px from the left */
+  background-image: url('./img/BannerPicture.png'); /* Add background image */
+  background-position: calc(100% - 50px) center; /* Move image more to the left */
+  background-size: 400px; /* Make the image bigger */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  display: flex;
+  align-items: center;
+  border-radius: 10px 10px 0 0; /* Ensure border radius is consistent */
+}
+
+.promotions-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  color: #ffffff;
+  font-size: 39px;
+}
+
+.promotions-section {
+  padding: 20px;
+  width: 100%;
+}
+
+.promotions-categories {
+  display: flex;
+  gap: 20px;
+  width: calc(100% - 40px); /* Adjust width to account for padding */
+  padding: 0 20px; /* Add padding to both left and right sides */
+  box-sizing: border-box;
+}
+
+.promotions-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Remove top and bottom padding */
+  background-color: #213643;
+  color: #ffffff; /* Updated to white */
+  width: calc(50% - 10px); /* Take up half the width with a gap */
+  height: 100px; /* Increase the height */
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure the icon stays within bounds */
+  position: relative; /* Ensure the icon stays within bounds */
+}
+
+.promotions-category span {
+  margin-left: 100px; /* Ensure there is space between the icon and text */
+  font-size: 20px; /* Adjust font size if needed */
+  font-weight: 550;
+}
+
+.promotions-category-icon {
+  width: 100px; /* Adjusted to fit better */
+  height: 100%; /* Full height */
+  background-size: cover;
+  background-position: center; /* Center the icon */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.casino-icon {
+  background-image: url('./img/PromotionsCasino.png');
+}
+
+.sports-icon {
+  background-image: url('./img/PromotionsSports.png');
+}
+
+.category-arrow {
+  font-size: 24px;
+  color: #B1BAD3; /* Updated to the new color */
+}
+
+.latest-promotions-section {
+  padding: 20px;
+  width: 100%;
+}
+
+.latest-promotions-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-weight: 550;
+}
+
+.latest-promotions-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.promotion-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px; /* Ensure consistent border radius */
+}
+
+.promotion-icon {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  border-radius: 10px; /* Match the border radius */
+}
+
+.sweet-bonanza-icon {
+  background-image: url('./img/SweetBonanza.png');
+}
+
+.daily-races-icon {
+  background-image: url('./img/Timer.png');
+}
+
+.weekly-raffle-icon {
+  background-image: url('./img/Raffle.png');
+}
+
+.promotion-details {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.promotion-end-time {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.promotion-title {
+  font-size: 16px;
+  font-weight: bold;
+}

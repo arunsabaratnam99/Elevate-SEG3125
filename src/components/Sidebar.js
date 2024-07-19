@@ -4,7 +4,6 @@ import './Sidebar.css';
 import Popup from './Popup';
 import LiveSupport from './LiveSupport';
 
-// Import icons
 import BaccaratVector from './icons/BaccaratVector.svg';
 import BaseballVector from './icons/BaseballVector.svg';
 import BasketballVector from './icons/BasketballVector.svg';
@@ -241,7 +240,7 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup }) {
             <li className="nav-item" onClick={togglePopup}><img src={LiveVector} alt="Live Support Icon" className="sub-nav-icon" />{t.liveSupport}</li>
           </div>
           <div className="grouped-items">
-            <li className="nav-item"><img src={PromotionVector} alt="Promotions Icon" className="sub-nav-icon" />{t.promotions}</li>
+            <li className="nav-item"><Link to="/promotions"><img src={PromotionVector} alt="Promotions Icon" className="sub-nav-icon" />{t.promotions}</Link></li>
             <li className="nav-item" onClick={openReferPopup}><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
             <li className="nav-item" onClick={openRedeemPopup}><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
           </div>
