@@ -5,6 +5,7 @@ import facebookLogo from './img/logos_facebook.svg';
 import twitchLogo from './img/logos_twitch.svg';
 import visibleIcon from './img/VectorVisibleVector.svg';
 import notVisibleIcon from './img/VectorNotVisibleVector.svg';
+import errorIcon from './icons/ErrorVector.svg'; // Import the error icon
 
 const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -38,24 +39,23 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
   const handleSubmit = (event) => {
     event.preventDefault();
     const newErrors = {};
-  
+
     if (!validateEmailOrUsername(formData.emailOrUsername)) {
       newErrors.emailOrUsername = 'Please enter your email or username.';
     }
-  
+
     if (!validatePassword(formData.password)) {
       newErrors.password = 'Please enter your password.';
     }
-  
+
     if (Object.keys(newErrors).length === 0) {
       alert('Sign In successful!');
-      onLoginSuccess(formData.emailOrUsername); 
-      onClose(); 
+      onLoginSuccess(formData.emailOrUsername);
+      onClose();
     } else {
       setErrors(newErrors);
     }
   };
-  
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevVisibility) => !prevVisibility);
@@ -104,7 +104,7 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
           <button className="sign-in-close-btn" onClick={onClose}>×</button>
         </div>
         <div className="sign-in-popup-body">
-          <form id="sign-in-form" onSubmit={handleSubmit}>
+          <form id="sign-in-form" onSubmit={handleSubmit} noValidate>
             <label htmlFor="sign-in-email-or-username">Email or Username <span>*</span></label>
             <input
               type="text"
@@ -115,10 +115,10 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
               onBlur={handleBlur}
               onFocus={handleFocus}
               className={errors.emailOrUsername ? (focused.emailOrUsername ? 'input-error-focused' : 'input-error') : ''}
-              required
             />
             {errors.emailOrUsername && (
               <div className="error-message">
+                <img src={errorIcon} alt="Error" className="error-icon" />
                 {errors.emailOrUsername}
               </div>
             )}
@@ -133,7 +133,6 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 className={errors.password ? (focused.password ? 'input-error-focused' : 'input-error') : ''}
-                required
               />
               <img
                 src={isPasswordVisible ? visibleIcon : notVisibleIcon}
@@ -144,6 +143,7 @@ const SignInPopup = ({ isOpen, onClose, onLoginSuccess, openRegistrationPopup })
             </div>
             {errors.password && (
               <div className="error-message">
+                <img src={errorIcon} alt="Error" className="error-icon" />
                 {errors.password}
               </div>
             )}

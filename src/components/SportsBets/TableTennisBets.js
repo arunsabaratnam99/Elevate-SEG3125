@@ -2,13 +2,13 @@ import React from 'react';
 import './TableTennisBets.css';
 
 const TableTennisBets = ({ onBetClick, selectedBets }) => {
-  const handleClick = (team, odds, opponent, marketName) => {
+  const handleClick = (team, odds, opponent, marketName, date) => {
     const isSelected = selectedBets.some((selectedBet) => selectedBet.team === team);
     if (isSelected) {
       const newSelectedBets = selectedBets.filter((selectedBet) => selectedBet.team !== team);
       onBetClick(newSelectedBets);
     } else {
-      const newSelectedBets = [...selectedBets, { team, odds, opponent, marketName }];
+      const newSelectedBets = [...selectedBets, { team, odds, opponent, marketName, date }];
       onBetClick(newSelectedBets);
     }
   };
@@ -68,7 +68,7 @@ const TableTennisBets = ({ onBetClick, selectedBets }) => {
                     {betItem.teams.map((team, idx) => (
                       <div
                         className={`team-odds ${selectedBets.some((selectedBet) => selectedBet.team === team.name) ? 'selected' : ''}`}
-                        onClick={() => handleClick(team.name, team.odds, betItem.teams.find(t => t.name !== team.name).name, betItem.marketName)}
+                        onClick={() => handleClick(team.name, team.odds, betItem.teams.find(t => t.name !== team.name).name, betItem.marketName, betItem.date)}
                         key={idx}
                       >
                         <div className="odds-box">

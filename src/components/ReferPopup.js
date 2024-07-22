@@ -67,72 +67,7 @@ const ReferPopup = ({ isOpen, onClose, username }) => {
           )}
           {activeTab === 'earnings' && (
             <div className="earnings-content">
-              <div className="earnings-header-section">
-                <div className="earnings-box-group">
-                  <div className="earnings-container">
-                    <div className="earnings-box full-width">
-                      <p>Available Credit</p>
-                      <div className="earnings-value">$0.00</div>
-                      <button className="earnings-claim-btn">Claim</button>
-                    </div>
-                    <div className="earnings-box full-width">
-                      <p>Lifetime Earnings</p>
-                      <div className="earnings-value">$0.00</div>
-                    </div>
-                  </div>
-                  <div className="earnings-container">
-                    <div className="earnings-box full-width">
-                      <p>Commission Tier</p>
-                      <div className="tier-value">Tier 1</div>
-                      <div className="commission-progress">
-                        <div className="progress-bar">
-                          <div className="progress" style={{ width: '5%' }}></div>
-                        </div>
-                        <div className="tier-labels">
-                          <span>Tier 1: 5%</span>
-                          <span>Tier 2: 6%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="earnings-stats-section full-width">
-                <div className="stats-container">
-                  <div className="stats-box-group">
-                    <div className="stats-box">
-                      <p>Referrals</p>
-                      <div className="stats-value">0</div>
-                    </div>
-                    <div className="stats-box">
-                      <p>Depositors</p>
-                      <div className="stats-value">0</div>
-                    </div>
-                    <div className="stats-box">
-                      <p>Deposits</p>
-                      <div className="stats-value">0</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="referral-earnings-section">
-                <div className="earnings-chart-header-section">
-                  <p>Referral Earnings</p>
-                  <div className="earnings-chart-controls">
-                    <button className="earnings-chart-btn">30d</button>
-                    <button className="earnings-chart-btn">14d</button>
-                    <button className="earnings-chart-btn active">7d</button>
-                  </div>
-                </div>
-                <div className="earnings-chart-section">
-                  <div className="chart-placeholder">$1.00</div>
-                  <div className="chart-placeholder">$0.80</div>
-                  <div className="chart-placeholder">$0.60</div>
-                  <div className="chart-placeholder">$0.40</div>
-                  <div className="chart-placeholder">$0.20</div>
-                  <div className="chart-placeholder">$0.00</div>
-                </div>
-              </div>
+              <div className="earnings-placeholder">D:</div> 
             </div>
           )}
           {activeTab === 'refer' && (

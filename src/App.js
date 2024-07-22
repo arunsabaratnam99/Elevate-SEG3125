@@ -21,7 +21,7 @@ import RegistrationPopup from './components/RegistrationPopup';
 import SignInPopup from './components/SignInPopup';
 import WalletPopup from './components/WalletPopup';
 import RedeemPopup from './components/RedeemPopup';
-import ReferPopup from './components/ReferPopup'; 
+import ReferPopup from './components/ReferPopup';
 import BetDetail from './components/BetDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Promotions from './components/Promotions';
@@ -30,14 +30,14 @@ function App() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('guest'); 
+  const [username, setUsername] = useState('guest');
   const [isWalletOpen, setIsWalletOpen] = useState(false);
-  const [walletAmount, setWalletAmount] = useState(0.00); 
+  const [walletAmount, setWalletAmount] = useState(0.00);
   const [registeredCards, setRegisteredCards] = useState([]);
-  const [selectedBets, setSelectedBets] = useState([]); 
-  const [myBets, setMyBets] = useState([]); 
-  const [isRedeemPopupOpen, setIsRedeemPopupOpen] = useState(false); 
-  const [isReferPopupOpen, setIsReferPopupOpen] = useState(false); 
+  const [selectedBets, setSelectedBets] = useState([]);
+  const [myBets, setMyBets] = useState([]);
+  const [isRedeemPopupOpen, setIsRedeemPopupOpen] = useState(false);
+  const [isReferPopupOpen, setIsReferPopupOpen] = useState(false);
 
   const handleBetClick = (newSelectedBets) => {
     setSelectedBets(newSelectedBets);
@@ -53,7 +53,14 @@ function App() {
   const openSignInPopup = () => setIsSignInOpen(true);
   const closeSignInPopup = () => setIsSignInOpen(false);
 
-  const openWalletPopup = () => setIsWalletOpen(true);
+  const openWalletPopup = () => {
+    if (isLoggedIn) {
+      setIsWalletOpen(true);
+    } else {
+      alert("You need to be logged in to access the wallet.");
+    }
+  };
+  
   const closeWalletPopup = () => setIsWalletOpen(false);
 
   const handleLoginSuccess = (loggedInUsername) => {
@@ -80,7 +87,7 @@ function App() {
 
   const handlePlaceBets = (wagers) => {
     const totalWager = wagers.reduce((total, wager) => total + parseFloat(wager || 0), 0);
-    setWalletAmount(walletAmount - totalWager); 
+    setWalletAmount(walletAmount - totalWager);
 
     const placedBets = selectedBets.map((bet, index) => ({
       ...bet,
@@ -88,8 +95,8 @@ function App() {
       returnAmount: wagers[index] * bet.odds
     }));
 
-    setMyBets([...myBets, ...placedBets]); 
-    setSelectedBets([]); 
+    setMyBets([...myBets, ...placedBets]);
+    setSelectedBets([]);
   };
 
   const handleCashout = (bet) => {
@@ -119,10 +126,24 @@ function App() {
           />
         </div>
         <div className="main-layout">
-          <Sidebar betslipOpen={selectedBets.length > 0} openRedeemPopup={openRedeemPopup} openReferPopup={openReferPopup} />
+          <Sidebar
+            betslipOpen={selectedBets.length > 0}
+            openRedeemPopup={openRedeemPopup}
+            openReferPopup={openReferPopup}
+            isLoggedIn={isLoggedIn} // Pass the isLoggedIn prop to the Sidebar component
+          />
           <div className={`content-container ${selectedBets.length ? 'with-detail' : ''}`}>
             <Routes>
-              <Route path="/" element={<Homepage onBetClick={handleBetClick} />} />
+              <Route
+                path="/"
+                element={
+                  <Homepage
+                    openRegistrationPopup={openRegistrationPopup}
+                    openWalletPopup={openWalletPopup} // Pass the openWalletPopup handler to the Homepage
+                    isLoggedIn={isLoggedIn} // Pass the isLoggedIn prop to the Homepage
+                  />
+                }
+              />
               <Route path="/basketball" element={<BasketballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
               <Route path="/soccer" element={<SoccerBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
               <Route path="/hockey" element={<HockeyBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
@@ -191,7 +212,7 @@ function App() {
         <ReferPopup
           isOpen={isReferPopupOpen}
           onClose={closeReferPopup}
-          username={username} 
+          username={username}
         />
       )}
     </div>

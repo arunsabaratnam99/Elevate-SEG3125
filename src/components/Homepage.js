@@ -10,7 +10,15 @@ import googlePayLogo from './img/logos_google-pay.svg'; // Update path as needed
 import mastercardLogo from './img/logos_mastercard.svg'; // Update path as needed
 import samsungPayLogo from './img/simple-icons_samsungpay.svg'; // Update path as needed
 
-const Homepage = ({ openRegistrationPopup }) => {
+const Homepage = ({ openRegistrationPopup, openWalletPopup, isLoggedIn }) => {
+  const handleDepositClick = () => {
+    if (isLoggedIn) {
+      openWalletPopup();
+    } else {
+      alert("You need to be logged in to access the wallet.");
+    }
+  };
+
   return (
     <div className="main-content">
       <div className="section">
@@ -56,7 +64,7 @@ const Homepage = ({ openRegistrationPopup }) => {
         <div className="payment-text-container">
           <h2>Get Started Now</h2>
           <p><span className="highlight">100%</span> Deposit Bonus</p>
-          <button className="payment-deposit-button">Deposit</button>
+          <button className="payment-deposit-button" onClick={handleDepositClick}>Deposit</button>
         </div>
       </div>
       <div className="bottom-sections no-background">

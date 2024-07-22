@@ -2,13 +2,13 @@ import React from 'react';
 import './ValorantBets.css';
 
 const ValorantBets = ({ onBetClick, selectedBets }) => {
-  const handleClick = (team, odds, opponent, marketName) => {
+  const handleClick = (team, odds, opponent, marketName, date) => {
     const isSelected = selectedBets.some((selectedBet) => selectedBet.team === team);
     if (isSelected) {
       const newSelectedBets = selectedBets.filter((selectedBet) => selectedBet.team !== team);
       onBetClick(newSelectedBets);
     } else {
-      const newSelectedBets = [...selectedBets, { team, odds, opponent, marketName }];
+      const newSelectedBets = [...selectedBets, { team, odds, opponent, marketName, date }];
       onBetClick(newSelectedBets);
     }
   };
@@ -19,7 +19,7 @@ const ValorantBets = ({ onBetClick, selectedBets }) => {
       marketName: "Match Winner - Twoway",
       teams: [
         { name: "KRÜ Esports", odds: "1.68" },
-        { name: "Cloud9 ", odds: "2.10" }
+        { name: "Cloud9", odds: "2.10" }
       ]
     },
     {
@@ -68,7 +68,7 @@ const ValorantBets = ({ onBetClick, selectedBets }) => {
                     {betItem.teams.map((team, idx) => (
                       <div
                         className={`team-odds ${selectedBets.some((selectedBet) => selectedBet.team === team.name) ? 'selected' : ''}`}
-                        onClick={() => handleClick(team.name, team.odds, betItem.teams.find(t => t.name !== team.name).name, betItem.marketName)}
+                        onClick={() => handleClick(team.name, team.odds, betItem.teams.find(t => t.name !== team.name).name, betItem.marketName, betItem.date)}
                         key={idx}
                       >
                         <div className="odds-box">

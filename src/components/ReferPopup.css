@@ -169,6 +169,12 @@
   font-size: 16px;
   font-weight: 550;
   margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.refer-popup-link input:focus {
+  outline: none;
+  border-color: #2f4553;
 }
 
 .refer-popup-copy-btn {

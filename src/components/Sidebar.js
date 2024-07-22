@@ -142,7 +142,7 @@ const translations = {
   },
 };
 
-function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup }) {
+function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [subNavHeights, setSubNavHeights] = useState({});
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -176,6 +176,22 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup }) {
   const handleLanguageChange = (lang) => {
     setSelectedLanguage(lang);
     setExpandedLanguage(false);
+  };
+
+  const handleReferClick = () => {
+    if (isLoggedIn) {
+      openReferPopup();
+    } else {
+      alert('You need to be logged in to refer.');
+    }
+  };
+
+  const handleRedeemClick = () => {
+    if (isLoggedIn) {
+      openRedeemPopup();
+    } else {
+      alert('You need to be logged in to redeem.');
+    }
   };
 
   const t = translations[selectedLanguage];
@@ -241,8 +257,8 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup }) {
           </div>
           <div className="grouped-items">
             <li className="nav-item"><Link to="/promotions"><img src={PromotionVector} alt="Promotions Icon" className="sub-nav-icon" />{t.promotions}</Link></li>
-            <li className="nav-item" onClick={openReferPopup}><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
-            <li className="nav-item" onClick={openRedeemPopup}><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
+            <li className="nav-item" onClick={handleReferClick}><img src={ReferVector} alt="Refer Icon" className="sub-nav-icon" />{t.refer}</li>
+            <li className="nav-item" onClick={handleRedeemClick}><img src={RedeemVector} alt="Redeem Icon" className="sub-nav-icon" />{t.redeem}</li>
           </div>
           <li className="nav-item">
             <div

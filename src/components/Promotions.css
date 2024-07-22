@@ -15,6 +15,8 @@
   font-weight: 550;
   color: #ffffff;
   font-size: 39px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .promotions-section {
@@ -45,6 +47,11 @@
   box-sizing: border-box;
   overflow: hidden; /* Ensure the icon stays within bounds */
   position: relative; /* Ensure the icon stays within bounds */
+  transition: background-color 0.25s ease;
+}
+
+.promotions-category:hover {
+  background-color: #2f4553;
 }
 
 .promotions-category span {
@@ -73,7 +80,13 @@
 
 .category-arrow {
   font-size: 24px;
+  margin-right: 2rem;
   color: #B1BAD3; /* Updated to the new color */
+  transition: transform 0.25s ease;
+}
+
+.promotions-category:hover .category-arrow {
+  transform: translate(0.2em);
 }
 
 .latest-promotions-section {
@@ -82,57 +95,63 @@
 }
 
 .latest-promotions-title {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 10px;
   padding-left: 20px;
   font-weight: 550;
+  margin-top: 10px;
 }
 
 .latest-promotions-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  padding-left: 20px;
+  display: grid;
+  width: calc(97.6% - 40px); /* Adjust width to match the promotions categories */
+  gap: 2rem 1.5rem; 
+  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
 }
 
 .promotion-item {
-  width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 10px; /* Ensure consistent border radius */
+  gap: .5rem;
 }
 
 .promotion-icon {
+  transition: transform 0.3s; 
+  aspect-ratio: 40/21;
+  border-radius: .25rem; /* Apply border-radius to the image */
+  outline-offset: .125rem;
   width: 100%;
-  height: 100px;
-  background-size: cover;
-  border-radius: 10px; /* Match the border radius */
+  height: auto;
+  display: block;
 }
 
-.sweet-bonanza-icon {
-  background-image: url('./img/SweetBonanza.png');
+.promotion-item:hover .promotion-icon {
+  transform: translateY(-.3em);
 }
 
-.daily-races-icon {
-  background-image: url('./img/Timer.png');
-}
-
-.weekly-raffle-icon {
-  background-image: url('./img/Raffle.png');
-}
-
-.promotion-details {
-  text-align: center;
-  width: 100%;
-  padding: 10px;
+.promotion-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .promotion-end-time {
-  font-size: 12px;
-  margin-bottom: 5px;
+  text-align: left;
+  line-height: 1.5;
+  justify-content: flex-start;
+  font-size: .75rem;
+  color: #B1BAD3;
 }
-
 .promotion-title {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1.125rem;
+  color: #ffffff;
+  font-weight: 550;
+  line-height: 132%;
+  text-align: left;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
 }

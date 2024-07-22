@@ -228,6 +228,14 @@
   font-size: 11px;
   margin-top: -5px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.error-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
 }
 
 .sign-in-popup input.input-error {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './BetDetail.css';
-import MyBetsVector from './icons/MyBetsVector.svg'; // Adjust the path to your icon file
-import CloseVector from './icons/CloseVector.svg'; // Adjust the path to your close button SVG
-import DropdownVector from './icons/DropdownVector.svg'; // Import the dropdown icon
-import DollarVector from './icons/DollarVector.svg'; // Import the dollar icon
+import MyBetsVector from './icons/MyBetsVector.svg'; 
+import CloseVector from './icons/CloseVector.svg'; 
+import DropdownVector from './icons/DropdownVector.svg'; 
+import DollarVector from './icons/DollarVector.svg'; 
 
 const BetDetail = ({ bets = [], onClose, onClearAll, isLoggedIn, openRegistrationPopup, walletAmount, onPlaceBets }) => {
   const [activeTab, setActiveTab] = useState('Single');
@@ -53,7 +53,7 @@ const BetDetail = ({ bets = [], onClose, onClearAll, isLoggedIn, openRegistratio
     if (!isVisible) {
       const timer = setTimeout(() => {
         onClose([]);
-      }, 300); // Duration of the slide-out animation
+      }, 300); 
       return () => clearTimeout(timer);
     }
   }, [isVisible, onClose]);
