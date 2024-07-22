@@ -17,7 +17,7 @@ function Header({ isLoggedIn, onLoginSuccess, openRegistrationPopup, openSignInP
   return (
     <header className={`header ${isLoggedIn ? 'logged-in' : ''}`}>
       <div className="logo-wrapper">
-        <div className="logo"><Link to="/">Elevate</Link></div>
+        <div className="logo"><Link to="/Elevate-SEG3125">Elevate</Link></div>
       </div>
       {!isLoggedIn && (
         <div className="auth-buttons">

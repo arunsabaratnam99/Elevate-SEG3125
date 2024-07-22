@@ -135,7 +135,7 @@ function App() {
           <div className={`content-container ${selectedBets.length ? 'with-detail' : ''}`}>
             <Routes>
               <Route
-                path="/"
+                path="/Elevate-SEG3125"
                 element={
                   <Homepage
                     openRegistrationPopup={openRegistrationPopup}
