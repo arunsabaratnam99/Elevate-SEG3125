@@ -22,10 +22,10 @@ html, body {
   background-color: #1A2C38;
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px auto; /* Center the section */
-  width: 90%; /* Adjust width as needed */
-  max-width: 1600px; /* Set a max width */
-  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+  margin: 20px auto; 
+  width: 90%; 
+  max-width: 1600px; 
+  box-sizing: border-box; 
 }
 
 .image-container {
@@ -39,17 +39,17 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px 0 0 10px; /* Add border-radius for top-left and bottom-left corners */
+  border-radius: 10px 0 0 10px; 
 }
 
 .text-container {
-  flex: 1; /* Adjust flex to give equal space to the image and text */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-family: 'Fredoka', sans-serif;
   font-weight: 550;
 }
 
@@ -58,7 +58,7 @@ html, body {
   margin: 0;
   font-weight: 550;
   font-size: 39px;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-family: 'Fredoka', sans-serif;
 }
 
 .text-container p {
@@ -73,18 +73,18 @@ html, body {
   background-color: #EEAF0E;
   color: white;
   border: none;
-  padding: 20px 80px; /* Adjust padding for a better look */
+  padding: 20px 80px;
   border-radius: 5px;
   margin-bottom: 20px;
-  font-size: 26px; /* Adjust font size for the button */
+  font-size: 26px; 
   width: 100%;
   font-weight: 550;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the button */
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  font-family: 'Fredoka', sans-serif; 
+  transition: background-color 0.3s ease; 
 }
 
 .section-register-button:hover {
-  background-color: #D18F0A; /* Darker color on hover */
+  background-color: #D18F0A; 
 }
 
 .continue-with {
@@ -98,9 +98,9 @@ html, body {
   color: white;
   margin: 10px 20px;
   font-weight: 550;
-  font-size: 15px; /* 5 less than join now text size */
-  background-color: #1A2C38; /* Match background color */
-  padding: 0 10px; /* Add padding to avoid overlap with lines */
+  font-size: 15px; 
+  background-color: #1A2C38; 
+  padding: 0 10px; 
 }
 
 .continue-with hr {
@@ -108,12 +108,12 @@ html, body {
   border: none;
   height: 1px;
   background-color: #666666;
-  margin: 0 10px; /* Space between the line and text */
+  margin: 0 10px; 
 }
 
 .social-buttons {
   display: flex;
-  gap: 35px; /* Increase spacing between buttons on the x-axis */
+  gap: 35px; 
 }
 
 .social-button {
@@ -126,29 +126,29 @@ html, body {
   border-radius: 10px;
   font-weight: 550;
   font-family: 'Fredoka', sans-serif;
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  transition: background-color 0.3s ease; 
 }
 
 .social-button:hover {
-  background-color: #1A3348; /* Darker color on hover */
+  background-color: #1A3348; 
 }
 
 .social-logo {
   width: 20px;
   height: 20px;
-  margin-right: 10px; /* Space between logo and text */
+  margin-right: 10px; 
 }
 
 .payment-section {
   display: flex;
-  flex-direction: row; /* Change to row to position image and text side by side */
+  flex-direction: row; 
   background-color: #1A2C38;
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px auto; /* Center the section */
-  width: 90%; /* Adjust width as needed */
-  max-width: 1600px; /* Set a max width */
-  min-height: 300px; /* Ensure the section is tall enough */
+  margin: 20px auto; 
+  width: 90%; 
+  max-width: 1600px; 
+  min-height: 300px; 
 }
 
 .payment-image-container {
@@ -162,12 +162,12 @@ html, body {
 .payment-options {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Increase space between rows */
+  gap: 30px; 
 }
 
 .payment-row {
   display: flex;
-  gap: 50px; /* Increase space between icons in the row */
+  gap: 50px; 
   justify-content: center;
 }
 
@@ -176,19 +176,19 @@ html, body {
 }
 
 .payment-logo {
-  width: 115px; /* Increase width of the logos */
+  width: 115px; 
   height: auto;
 }
 
 .payment-text-container {
-  flex: 1; /* Adjust flex to give equal space to the image and text */
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align items to the start (left) */
-  align-items: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start; 
+  align-items: flex-start; 
   padding: 20px;
-  padding-left: 40px; /* Add left padding */
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  padding-left: 40px; 
+  font-family: 'Fredoka', sans-serif; 
   font-weight: 550;
   background-color: #1C313F;
 }
@@ -197,8 +197,8 @@ html, body {
   color: white;
   margin: 0;
   font-weight: 550;
-  font-size: 40px; /* Increase font size */
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-size: 40px; 
+  font-family: 'Fredoka', sans-serif; 
   padding-top: 5px;
 }
 
@@ -206,7 +206,7 @@ html, body {
   color: white;
   margin: 10px 0;
   font-weight: 550;
-  font-size: 30px; /* Increase font size */
+  font-size: 30px;
 }
 
 .payment-text-container .highlight {
@@ -217,17 +217,17 @@ html, body {
   background-color: #834DF7;
   color: white;
   border: none;
-  padding: 20px 80px; /* Increase padding for a wider button */
+  padding: 20px 80px; 
   border-radius: 10px;
-  font-size: 28px; /* Adjust font size for the button */
+  font-size: 28px; 
   font-weight: 550;
-  margin-top: 50px; /* Move the button lower */
+  margin-top: 50px; 
   font-family: 'Fredoka', sans-serif;
-  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  transition: background-color 0.3s ease; 
 }
 
 .payment-deposit-button:hover {
-  background-color: #5B37A7; /* Darker color on hover */
+  background-color: #5B37A7; 
 }
 
 .bottom-sections.no-background {
@@ -236,48 +236,46 @@ html, body {
   margin: 20px auto;
   width: 90%;
   max-width: 1600px;
-  background-color: transparent !important; /* Set to transparent or remove the background color */
-  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+  background-color: transparent !important; 
+  box-sizing: border-box; 
 }
 
 .casino-container, .sportsbook-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Align items to the bottom */
-  align-items: flex-start; /* Align items to the start (left) */
+  justify-content: flex-end; 
+  align-items: flex-start; 
   border-radius: 10px;
   padding: 40px;
-  width: calc(50% - 85px); /* Adjust width to ensure space between boxes */
-  height: 250px; /* Increase the height */
+  width: calc(50% - 85px); 
+  height: 250px; 
   text-align: left;
   color: white;
-  transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+  transition: transform 0.3s ease; 
 }
 
 .casino-container:hover, .sportsbook-container:hover {
-  transform: translateY(-10px); /* Move up by 10px on hover */
-  
+  transform: translateY(-10px); 
 }
 
 .casino-container {
-  background: linear-gradient(to bottom, #254AA5 0%, #0E1C3F 100%); /* Apply the gradient */
+  background: linear-gradient(to bottom, #254AA5 0%, #0E1C3F 100%); 
 }
 
 .sportsbook-container {
-  background: linear-gradient(to bottom, #FBBC04 0%, #957002 100%); /* Apply the gradient */
-
+  background: linear-gradient(to bottom, #FBBC04 0%, #957002 100%); 
 }
 
 .casino-container h2, .sportsbook-container h2 {
   font-size: 45px;
   margin: 0;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-family: 'Fredoka', sans-serif; 
   font-weight: 550;
 }
 
 .casino-container p, .sportsbook-container p {
   font-size: 23px;
   margin: 10px 0 0 0;
-  font-family: 'Fredoka', sans-serif; /* Apply Fredoka font to the header */
+  font-family: 'Fredoka', sans-serif; 
   font-weight: 550;
 }

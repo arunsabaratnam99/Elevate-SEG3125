@@ -12,11 +12,10 @@ const Chat = () => {
       setMessages([...messages, { text: newMessage, user: "You", time: timestamp, align: 'right' }]);
       setNewMessage("");
 
-      // Add an automated response
       setTimeout(() => {
         const responseTimestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         setMessages((prevMessages) => [...prevMessages, { text: "Message back", user: "System", time: responseTimestamp, align: 'left' }]);
-      }, 1000); // 1 second delay for the response
+      }, 1000); 
     }
   };
 

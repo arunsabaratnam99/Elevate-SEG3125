@@ -11,7 +11,7 @@
 }
 
 .sidebar.betslip-open .popup {
-  margin-left: 300px; /* Adjust this value based on the width of the betslip */
+  margin-left: 300px;
 }
 
 .nav {
@@ -27,9 +27,9 @@
   font-size: 13px;
   font-weight: 550;
   color: #CECECE;
-  background-color: transparent; /* Ensure no background color */
+  background-color: transparent;
   text-decoration: none;
-  display: block; /* Ensure items stack vertically */
+  display: block;
 }
 
 .grouped-items {
@@ -37,13 +37,13 @@
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
-  width: 147px; /* Set width for grouped items */
+  width: 147px;
 }
 
 .grouped-items .nav-item {
   margin-bottom: 17px;
-  display: flex; /* Align icon and text horizontally */
-  align-items: center; /* Align items vertically */
+  display: flex;
+  align-items: center;
 }
 
 .grouped-items .nav-item:last-child {
@@ -61,34 +61,34 @@
   font-weight: 550;
   padding: 10px;
   border-radius: 5px 5px 0 0;
-  width: 147px; /* Set width for header */
-  cursor: pointer; /* Make header clickable */
-  display: flex; /* Align icon and text horizontally */
+  width: 147px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
 }
 
 .sub-nav {
   list-style-type: none;
-  padding-left: 10px; /* Adjusted padding to remove extra space */
+  padding-left: 10px;
   margin-top: 0;
   background-color: #214055;
-  padding: 10px 10px 0 ;
+  padding: 10px 10px 0;
   border-radius: 0 0 5px 5px;
-  width: 147px; /* Set width for sub-nav */
-  min-height: 0; /* Initial height for hidden state */
+  width: 147px;
+  min-height: 0;
   overflow: hidden;
-  transition: height 0.3s ease; /* Smooth transition */
+  transition: height 0.3s ease;
 }
 
 .sub-nav.expanded {
-  height: auto; /* Expand to fit content */
+  height: auto;
 }
 
 .sub-nav li {
-  margin-bottom: 17px; /* Increased spacing between text items */
+  margin-bottom: 17px;
   cursor: pointer;
-  background-color: transparent; /* Ensure no background color */
-  display: flex; /* Align icon and text horizontally */
+  background-color: transparent;
+  display: flex;
   align-items: center;
 }
 
@@ -97,12 +97,12 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 550;
-  display: flex; /* Align icon and text horizontally */
-  align-items: center; /* Align items vertically */
+  display: flex;
+  align-items: center;
 }
 
 .nav-item a:hover {
-  color: #c4dff6; /* same hover effect as the other items */
+  color: #c4dff6;
   transition: color 0.3s;
 }
 
@@ -141,21 +141,20 @@
   align-items: center;
   cursor: pointer;
   color: #CECECE;
-  width: calc(100% - 10px); /* Adjust width to ensure full length */
-  border-radius: 5px; /* Add border-radius for rounded corners */
+  width: calc(100% - 10px);
+  border-radius: 5px;
 }
 
 .language-item.selected {
-  background-color: #214055; /* Changed to match the color scheme */
+  background-color: #214055;
   color: #FFFFFF;
 }
 
 .language-item .checkmark {
   margin-left: auto;
-  padding-left: 10px; /* Add some padding to separate the checkmark from the text */
+  padding-left: 10px;
 }
 
-/* Additional CSS for icons */
 .nav-icon {
   width: 20px;
   height: 20px;

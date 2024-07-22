@@ -260,7 +260,7 @@
 }
 
 .bet-button {
-  background-color: #EEAF0E; /* Button color */
+  background-color: #EEAF0E; 
   color: #FFFFFF;
   font-family: 'Fredoka', sans-serif;
   font-weight: 550;
@@ -280,21 +280,21 @@
   background-color: #213743;
   border-radius: 10px;
   color: #ffffff;
-  width: max-content; /* Allow the card to adjust to the content width */
-  min-width: 280px; /* Minimum width to ensure the card is not too narrow */
-  max-width: 100%; /* Ensure the card doesn't exceed the container width */
+  width: max-content; 
+  min-width: 280px; 
+  max-width: 100%; 
   overflow: hidden;
   flex-grow: 1;
-  box-sizing: border-box; /* Ensure padding and width calculation */
-  margin-bottom: 20px; /* Add margin between bet items */
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
 }
 
 .bet-card-header-new {
-  background-color: #2F4553; /* Different color for header */
+  background-color: #2F4553; 
   padding: 5px;
   text-align: left;
-  color: #8E9AB0; /* Text color */
-  border-radius: 0.25rem 0.25rem 0 0; /* Round top corners */
+  color: #8E9AB0; 
+  border-radius: 0.25rem 0.25rem 0 0; 
   font-family: 'Fredoka', sans-serif;
   font-weight: 550;
   position:relative;

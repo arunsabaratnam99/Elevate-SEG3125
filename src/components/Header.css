@@ -70,7 +70,6 @@
   background-color: #d4980e;
 }
 
-/* Styles for the logged-in state */
 .logged-in .header {
   justify-content: space-between;
 }
@@ -120,16 +119,16 @@
   border: none;
   font-family: 'Fredoka', sans-serif;
   font-weight: 550;
-  transition: background-color 0.3s; /* Add transition for smooth effect */
+  transition: background-color 0.3s; 
 }
 
 .wallet-button:hover {
-  background-color: #c8920b; /* Darker color on hover */
+  background-color: #c8920b; 
 }
 
 .profile-icon {
   margin-left: auto;
-  margin-right: 65px; /* Align the profile icon with the auth buttons when not logged in */
+  margin-right: 65px; 
 }
 
 .profile-icon img {
@@ -137,9 +136,9 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  transition: filter 0.3s; /* Add transition for smooth effect */
+  transition: filter 0.3s; 
 }
 
 .profile-icon img:hover {
-  filter: brightness(0.8); /* Darken the icon on hover */
+  filter: brightness(0.8); 
 }

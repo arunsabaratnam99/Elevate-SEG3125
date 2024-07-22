@@ -229,7 +229,6 @@
   text-decoration: underline;
 }
 
-/* Earnings-specific styles */
 .earnings-content {
   padding: 20px;
 }
@@ -257,7 +256,7 @@
 
 .earnings-container,
 .stats-container {
-  background-color: #253946; /* Adjust the color as needed */
+  background-color: #253946; 
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
