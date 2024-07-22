@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;550&display=swap');
+
+.wallet-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.wallet-popup-content {
+  background-color: #1A2C38;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  box-sizing: border-box;
+  position: relative;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: slideInWallet 0.3s forwards 0.2s;
+}
+
+@keyframes slideInWallet {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wallet-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wallet-popup-header h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 24px;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.wallet-popup-header .wallet-icon {
+  margin-right: 10px;
+}
+
+.wallet-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #B1BAD3;
+}
+
+.wallet-tabs {
+  display: flex;
+  position: relative;
+  margin-top: 20px;
+  background-color: #0F212F;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.wallet-tab {
+  flex: 1;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+}
+
+.wallet-tab.active {
+  color: white;
+}
+
+.wallet-tab-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #2F4453;
+  transition: left 0.3s;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+.wallet-balance-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.wallet-balance {
+  display: flex;
+  align-items: center;
+  background-color: #0F212F;
+  padding: 10px 25px;
+  color: #FFFFFF;
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: 550;
+}
+
+.wallet-balance .dollar-icon {
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.wallet-content {
+  margin-top: 10px;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+}
+
+.deposit-content label {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  color: #B1BAD3;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.deposit-content select,
+.deposit-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 2px solid #253946;
+  background-color: #142633;
+  color: #6D7880;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.deposit-content select:hover,
+.deposit-content input:hover {
+  border-color: #2f4553;
+}
+
+.deposit-content select:focus,
+.deposit-content input:focus {
+  border-color: #4A6377;
+  outline: none;
+  color: #ffffff;
+  background-color: #0F212E;
+}
+
+.deposit-btn {
+  background-color: #EEAF0E;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.deposit-btn:hover {
+  background-color: #d4980e;
+}
+
+.add-new-card-container {
+  margin-bottom: 10px;
+}
+
+.add-new-card-btn {
+  background-color: #253946;
+  color: white;
+  padding: 10px;
+  border: 2px solid #253946;
+  border-radius: 5px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 0.3s, width 0.3s;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-new-card-btn:hover {
+  background-color: #2f4553;
+  border-bottom: 2px solid #253946;
+}
+
+.add-new-card-btn.expanded {
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.add-new-card-btn .plus-icon {
+  margin-right: 5px;
+}
+
+.add-new-card-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-left: 2px solid #253946;
+  border-right: 2px solid #253946;
+  border-bottom: 2px solid #253946;
+  background-color: #142633;
+  border-radius: 0 0 5px 5px;
+}
+
+.add-new-card-btn.expanded + .add-new-card-dropdown {
+  display: flex;
+}
+
+.add-new-card-dropdown input {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  border-radius: 4px;
+  border: 2px solid #253946;
+  background-color: #142633;
+  color: #6D7880;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 0px;
+}
+
+.add-new-card-dropdown input:hover {
+  border-color: #2f4553;
+}
+
+.add-new-card-dropdown input:focus {
+  border-color: #4A6377;
+  outline: none;
+  color: #ffffff;
+  background-color: #0F212E;
+}
+
+.add-new-card-dropdown select.select-error,
+.add-new-card-dropdown input.input-error {
+  border: 2px solid #84374E;
+}
+
+.add-new-card-dropdown select.select-error-focused,
+.add-new-card-dropdown input.input-error-focused {
+  border: 2px solid #ED4163;
+}
+
+.add-new-card-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #B1BAD3;
+  align-self: flex-end;
+}
+
+.save-card-btn {
+  background-color: #EEAF0E;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.save-card-btn:hover {
+  background-color: #d4980e;
+}
+
+.expiry-date-cvv {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.expiry-date {
+  flex: 2;
+  gap: 10px;
+}
+
+.expiry-date select {
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.cvv {
+  flex: 1;
+}
+
+.cvv input {
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.expiry-month-year {
+  display: flex;
+  gap: 5px;
+}
+
+.error-message {
+  color: #F2708A;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 11px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.deposit-content input.input-error {
+  border: 2px solid #84374E;
+}
+
+.deposit-content input.input-error-focused {
+  border: 2px solid #ED4163;
+}
+
+.deposit-content select.select-error {
+  border: 2px solid #84374E;
+}
+
+.deposit-content select.select-error-focused {
+  border: 2px solid #ED4163;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  color: #F2708A;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 11px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.error-message img {
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.withdraw-content label {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  color: #B1BAD3;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.withdraw-content select,
+.withdraw-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 2px solid #253946;
+  background-color: #142633;
+  color: #6D7880;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 550;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.withdraw-content select:hover,
+.withdraw-content input:hover {
+  border-color: #2f4553;
+}
+
+.withdraw-content select:focus,
+.withdraw-content input:focus {
+  border-color: #4A6377;
+  outline: none;
+  color: #ffffff;
+  background-color: #0F212E;
+}
+
+.withdraw-btn {
+  background-color: #EEAF0E;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 550;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.withdraw-btn:hover {
+  background-color: #d4980e;
+}
+
+.bank-codes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bank-code {
+  flex: 1;
+}
+
+.withdraw-content input.input-error {
+  border: 2px solid #84374E;
+}
+
+.withdraw-content input.input-error-focused {
+  border: 2px solid #ED4163;
+}
+
+.withdraw-content select.select-error {
+  border: 2px solid #84374E;
+}
+
+.withdraw-content select.select-error-focused {
+  border: 2px solid #ED4163;
+}
