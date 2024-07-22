@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Elevate-SEG3125/static/css/main.3501d458.css",
-    "main.js": "/Elevate-SEG3125/static/js/main.008fcc75.js",
+    "main.js": "/Elevate-SEG3125/static/js/main.b48ef045.js",
     "static/js/453.4d4e1e8e.chunk.js": "/Elevate-SEG3125/static/js/453.4d4e1e8e.chunk.js",
     "static/media/gamblingthing.svg.svg": "/Elevate-SEG3125/static/media/gamblingthing.svg.e0ff40d4df68926185094b877fd420c8.svg",
     "static/media/RedeemPicture.png": "/Elevate-SEG3125/static/media/RedeemPicture.3eb47b3f3f754c883785.png",
@@ -68,11 +68,11 @@
     "static/media/material-symbols_home.svg": "/Elevate-SEG3125/static/media/material-symbols_home.22ce24cc17798195ef4f6966affb3123.svg",
     "static/media/PlusVector.svg": "/Elevate-SEG3125/static/media/PlusVector.fd2cbbfa54a1dc30d268bcac88109449.svg",
     "main.3501d458.css.map": "/Elevate-SEG3125/static/css/main.3501d458.css.map",
-    "main.008fcc75.js.map": "/Elevate-SEG3125/static/js/main.008fcc75.js.map",
+    "main.b48ef045.js.map": "/Elevate-SEG3125/static/js/main.b48ef045.js.map",
     "453.4d4e1e8e.chunk.js.map": "/Elevate-SEG3125/static/js/453.4d4e1e8e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3501d458.css",
-    "static/js/main.008fcc75.js"
+    "static/js/main.b48ef045.js"
   ]
 }
