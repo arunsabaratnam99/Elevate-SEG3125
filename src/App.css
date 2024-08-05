@@ -6,8 +6,10 @@
 
 .main-layout {
   display: flex;
+  height: calc(100vh - 80px); 
+  overflow-y: auto; 
+  overflow-x: hidden; 
 }
-
 
 .header {
   z-index: 2;
@@ -15,19 +17,40 @@
 
 .content-container {
   flex-grow: 1;
-  z-index: 1;
   background-color: #1A2C38;
-  transition: margin-right 0.3s;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  height: calc(100vh - 80px); 
+  transition: margin-right 0.3s ease; 
+}
+
+.content {
+  transition: margin-right 0.3s ease; 
+}
+
+.content.with-detail {
+  margin-right: 370px; 
+}
+
+.sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  bottom: 0;
 }
 
 .content-container.with-detail {
-  margin-right: 370px; /* Width of the BetDetail */
+  margin-right: 370px; 
 }
 
 .header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   transition: margin-right 0.3s;
 }
 
 .header-container.with-detail {
-  margin-right: 370px; /* Adjust as needed */
+  margin-right: 370px;
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
+import './customScrollbar.css'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
@@ -23,8 +25,8 @@ import WalletPopup from './components/WalletPopup';
 import RedeemPopup from './components/RedeemPopup';
 import ReferPopup from './components/ReferPopup';
 import BetDetail from './components/BetDetail';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Promotions from './components/Promotions';
+import Blackjack from './components/CasinoGames/Blackjack';
 
 function App() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -115,65 +117,68 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className={`header-container ${selectedBets.length ? 'with-detail' : ''}`}>
-          <Header
-            isLoggedIn={isLoggedIn}
-            openRegistrationPopup={openRegistrationPopup}
-            openSignInPopup={openSignInPopup}
-            onLoginSuccess={handleLoginSuccess}
-            openWalletPopup={openWalletPopup}
-            walletAmount={walletAmount}
-          />
-        </div>
+        <Header
+          isLoggedIn={isLoggedIn}
+          openRegistrationPopup={openRegistrationPopup}
+          openSignInPopup={openSignInPopup}
+          onLoginSuccess={handleLoginSuccess}
+          openWalletPopup={openWalletPopup}
+          walletAmount={walletAmount}
+          isBetDetailOpen={selectedBets.length > 0}
+        />
         <div className="main-layout">
           <Sidebar
+            className="sidebar"
             betslipOpen={selectedBets.length > 0}
             openRedeemPopup={openRedeemPopup}
             openReferPopup={openReferPopup}
-            isLoggedIn={isLoggedIn} // Pass the isLoggedIn prop to the Sidebar component
+            isLoggedIn={isLoggedIn}
           />
-          <div className={`content-container ${selectedBets.length ? 'with-detail' : ''}`}>
-            <Routes>
-              <Route
-                path="/Elevate-SEG3125"
-                element={
-                  <Homepage
-                    openRegistrationPopup={openRegistrationPopup}
-                    openWalletPopup={openWalletPopup} // Pass the openWalletPopup handler to the Homepage
-                    isLoggedIn={isLoggedIn} // Pass the isLoggedIn prop to the Homepage
-                  />
-                }
-              />
-              <Route path="/basketball" element={<BasketballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/soccer" element={<SoccerBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/hockey" element={<HockeyBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/football" element={<FootballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/tennis" element={<TennisBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/baseball" element={<BaseballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/cricket" element={<CricketBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/volleyball" element={<VolleyballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/table-tennis" element={<TableTennisBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/valorant" element={<ValorantBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/lol" element={<LoLBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/cs2" element={<CS2Bets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
-              <Route path="/my-bets" element={<MyBets bets={myBets} onCashout={handleCashout} />} />
-              <Route path="/chat" element={<Chat />} />
-              <Route path="/promotions" element={<Promotions />} />
-            </Routes>
-          </div>
-          {selectedBets.length > 0 && (
-            <div className="bet-detail-container">
-              <BetDetail
-                bets={selectedBets}
-                onClose={handleCloseBet}
-                onClearAll={handleClearAllBets}
-                isLoggedIn={isLoggedIn}
-                openRegistrationPopup={openRegistrationPopup}
-                walletAmount={walletAmount}
-                onPlaceBets={handlePlaceBets}
-              />
+          <div className="content-container">
+            <div className={`content ${selectedBets.length ? 'with-detail' : ''}`}>
+              <Routes>
+                <Route
+                  path="/Elevate-SEG3125"
+                  element={
+                    <Homepage
+                      openRegistrationPopup={openRegistrationPopup}
+                      openWalletPopup={openWalletPopup}
+                      isLoggedIn={isLoggedIn}
+                    />
+                  }
+                />
+                <Route path="/blackjack" element={<Blackjack />} /> {/* Add Blackjack route */}
+                <Route path="/basketball" element={<BasketballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/soccer" element={<SoccerBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/hockey" element={<HockeyBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/football" element={<FootballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/tennis" element={<TennisBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/baseball" element={<BaseballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/cricket" element={<CricketBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/volleyball" element={<VolleyballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/table-tennis" element={<TableTennisBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/valorant" element={<ValorantBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/lol" element={<LoLBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/cs2" element={<CS2Bets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
+                <Route path="/my-bets" element={<MyBets bets={myBets} onCashout={handleCashout} />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/promotions" element={<Promotions />} />
+              </Routes>
             </div>
-          )}
+            {selectedBets.length > 0 && (
+              <div className="bet-detail-container">
+                <BetDetail
+                  bets={selectedBets}
+                  onClose={handleCloseBet}
+                  onClearAll={handleClearAllBets}
+                  isLoggedIn={isLoggedIn}
+                  openRegistrationPopup={openRegistrationPopup}
+                  walletAmount={walletAmount}
+                  onPlaceBets={handlePlaceBets}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </Router>
       {isRegistrationOpen && (

@@ -7,7 +7,7 @@ import WalletPopup from './WalletPopup';
 import DollarVector from './icons/DollarVector.svg';
 import ProfileVector from './icons/ProfileVector.svg';
 
-function Header({ isLoggedIn, onLoginSuccess, openRegistrationPopup, openSignInPopup, openWalletPopup, walletAmount }) {
+function Header({ isLoggedIn, onLoginSuccess, openRegistrationPopup, openSignInPopup, openWalletPopup, walletAmount, isBetDetailOpen }) {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
 
@@ -15,7 +15,7 @@ function Header({ isLoggedIn, onLoginSuccess, openRegistrationPopup, openSignInP
   const closeSignInPopup = () => setIsSignInOpen(false);
 
   return (
-    <header className={`header ${isLoggedIn ? 'logged-in' : ''}`}>
+    <header className={`header ${isLoggedIn ? 'logged-in' : ''} ${isBetDetailOpen ? 'bet-detail-open' : ''}`}>
       <div className="logo-wrapper">
         <div className="logo"><Link to="/Elevate-SEG3125">Elevate</Link></div>
       </div>

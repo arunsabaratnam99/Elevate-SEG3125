@@ -1,13 +1,13 @@
 .promotions-header-section {
   background-color: #213643;
-  padding: 25px 85px;
+  padding: 25px 85px 25px 40px;
   background-image: url('./img/BannerPicture.png');
   background-position: calc(100% - 50px) center;
   background-size: 400px;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 0px 0 0;
 }
 
 .promotions-title {
@@ -30,6 +30,10 @@
   width: calc(100% - 40px);
   padding: 0 20px;
   box-sizing: border-box;
+}
+
+.latest-promotions-title{
+  color: #ffffff;
 }
 
 .promotions-category {

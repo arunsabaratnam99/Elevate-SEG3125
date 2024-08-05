@@ -9,7 +9,6 @@ import BaseballVector from './icons/BaseballVector.svg';
 import BasketballVector from './icons/BasketballVector.svg';
 import BlackjackVector from './icons/BlackjackVector.svg';
 import CasinoVector from './icons/CasinoVector.svg';
-import ChatVector from './icons/ChatVector.svg';
 import Craps from './icons/Craps.svg';
 import CricketVector from './icons/CricketVector.svg';
 import CS2Vector from './icons/CS2Vector.svg';
@@ -25,7 +24,6 @@ import PromotionVector from './icons/PromotionVector.svg';
 import RedeemVector from './icons/RedeemVector.svg';
 import ReferVector from './icons/ReferVector.svg';
 import RouletteVector from './icons/RouletteVector.svg';
-import SearchVector from './icons/SearchVector.svg';
 import SlotsVector from './icons/SlotsVector.svg';
 import SoccerVector from './icons/SoccerVector.svg';
 import SportsVector from './icons/SportsVector.svg';
@@ -162,7 +160,12 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
   }, []);
 
   const toggleCategory = (category) => {
-    setExpandedCategory(expandedCategory === category ? null : category);
+    if (expandedCategory === category) {
+      setExpandedCategory(null);
+    } else {
+      setExpandedCategory(category);
+      setExpandedLanguage(false); 
+    }
   };
 
   const togglePopup = () => {
@@ -170,7 +173,12 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
   };
 
   const toggleLanguage = () => {
-    setExpandedLanguage(!expandedLanguage);
+    if (expandedLanguage) {
+      setExpandedLanguage(false);
+    } else {
+      setExpandedLanguage(true);
+      setExpandedCategory(null); 
+    }
   };
 
   const handleLanguageChange = (lang) => {
@@ -220,7 +228,7 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
               {t.games.map((game, index) => (
                 <li key={index}>
                   <img src={game.icon} alt={`${game.name} Icon`} className="sub-nav-icon" />
-                  {game.name}
+                  <Link to={`/${formatPath(game.name)}`}>{game.name}</Link>
                 </li>
               ))}
             </ul>
@@ -252,7 +260,6 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
           </div>
           
           <div className="grouped-items">
-            <li className="nav-item"><img src={ChatVector} alt="Chat Icon" className="sub-nav-icon" /><Link to="/chat">{t.chat}</Link></li>
             <li className="nav-item" onClick={togglePopup}><img src={LiveVector} alt="Live Support Icon" className="sub-nav-icon" />{t.liveSupport}</li>
           </div>
           <div className="grouped-items">
@@ -293,9 +300,6 @@ function Sidebar({ betslipOpen, openRedeemPopup, openReferPopup, isLoggedIn }) {
               </li>
             </ul>
           </li>
-          <div className="grouped-items">
-            <li className="nav-item"><img src={SearchVector} alt="Search Icon" className="sub-nav-icon" />{t.search}</li>
-          </div>
         </ul>
       </nav>
       {isPopupOpen && <Popup content={<LiveSupport />} handleClose={togglePopup} />}
