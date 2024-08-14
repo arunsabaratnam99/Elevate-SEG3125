@@ -12,7 +12,7 @@
 }
 
 .header.bet-detail-open {
-  margin-right: 370px; /* Adjust as needed to match the width of the bet detail */
+  margin-right: 370px; 
 }
 
 .logo-wrapper {
@@ -93,8 +93,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 52%;
 }
 
 .wallet-amount {

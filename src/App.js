@@ -147,7 +147,7 @@ function App() {
                     />
                   }
                 />
-                <Route path="/blackjack" element={<Blackjack />} /> {/* Add Blackjack route */}
+                <Route path="/blackjack" element={<Blackjack  isLoggedIn={isLoggedIn} openRegistrationPopup={openRegistrationPopup}/>} /> 
                 <Route path="/basketball" element={<BasketballBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
                 <Route path="/soccer" element={<SoccerBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
                 <Route path="/hockey" element={<HockeyBets onBetClick={handleBetClick} selectedBets={selectedBets} />} />
